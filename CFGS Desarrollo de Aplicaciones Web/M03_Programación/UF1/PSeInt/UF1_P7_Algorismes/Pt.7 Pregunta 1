@@ -1,0 +1,58 @@
+Algoritmo Restaurante
+	Escribir "Bienvenido al restaurante AWS1."
+	Escribir "Escoje tu menú par llevar, introduce un número de entre las opciones que te damos:"
+	Escribir "Escoje el Primer Plato:"
+	Escribir "  1 - Opción 1 (5 euros)"
+	Escribir "  2 - Opción 2 (6 euros)"
+	Escribir "  3 - Opción 3 (5,5 euros)"
+	Escribir "  4 - Opción 4 (4 euros)"
+	Leer pplato
+	Mientras pplato>4 o pplato<1 Hacer
+		Escribir "Por favor introduzca un valor entre 1 y 4:"
+		Leer pplato
+	FinMientras
+	Segun pplato Hacer
+		1:
+			pplato1 <- 5
+			oplato1 <- "Opción 1"
+		2:
+			pplato1 <- 6
+			oplato1 <- "Opción 2"
+		3:
+			pplato1 <- 5.5
+			oplato1 <- "Opción 3"
+		4:
+			pplato1 <- 4
+			oplato1 <- "Opción 4"
+	FinSegun
+	Escribir "Escoje el Segundo Plato:"
+	Escribir "  1 - Opción 1 (3.5 euros)"
+	Escribir "  2 - Opción 2 (7 euros)"
+	Escribir "  3 - Opción 3 (4 euros)"
+	Escribir "  4 - Opción 4 (6 euros)"
+	Leer pplato
+	Mientras pplato>4 o pplato<1 Hacer
+		Escribir "Por favor introduzca un valor entre 1 y 4:"
+		Leer pplato
+	FinMientras
+	Segun pplato Hacer
+		1:
+			pplato2 <- 3.5
+			oplato2 <- "Opción 1"
+		2:
+			pplato2 <- 7
+			oplato2 <- "Opción 2"
+		3:
+			pplato2 <- 4
+			oplato2 <- "Opción 3"
+		4:
+			pplato2 <- 6
+			oplato2 <- "Opción 4"
+	FinSegun
+	total <- pplato1+pplato2
+	Escribir "Has escogido:"
+	Escribir "  De Primer Plato: ",oplato1," (",pplato1," euros)."
+	Escribir "  De Segundo Plato: ",oplato2," (",pplato2," euros)."
+	Escribir "Total a pagar: ",total," euros."
+FinAlgoritmo
+

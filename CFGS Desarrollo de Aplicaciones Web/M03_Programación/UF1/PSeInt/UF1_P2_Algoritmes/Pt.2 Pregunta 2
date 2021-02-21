@@ -1,0 +1,9 @@
+Algoritmo Pulsaciones
+	edad <- 0
+	pulsaciones <- 0
+	Escribir "Introduzca su edad: "
+	Leer edad
+	pulsaciones <- (220-edad)/10
+	Escribir "Deberías tener ",pulsaciones," pulsaciones cada 10 segundos."
+FinAlgoritmo
+

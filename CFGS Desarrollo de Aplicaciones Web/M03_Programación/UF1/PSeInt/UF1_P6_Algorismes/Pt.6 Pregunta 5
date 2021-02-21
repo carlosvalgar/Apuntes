@@ -1,0 +1,14 @@
+Algoritmo Media_num_conocido
+	Escribir "Introduce la cantidad de números a introducir:"
+	Leer cant
+	Escribir "Introduce los números de los que quieres la media:"
+	med <- 0
+	Para i<-cant Hasta 1 Con Paso -1 Hacer
+		Escribir "Te quedan por introducir ",i," números."
+		Leer num
+		med <- med+num
+	FinPara
+	med <- med/cant
+	Escribir "La media de tus números es: ",med,"."
+FinAlgoritmo
+

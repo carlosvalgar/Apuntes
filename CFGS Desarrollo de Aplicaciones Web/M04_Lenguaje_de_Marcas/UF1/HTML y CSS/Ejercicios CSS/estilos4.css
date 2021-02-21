@@ -1,0 +1,38 @@
+h2 {
+    text-shadow: 2px 2px 5px grey;
+}
+
+p {
+    text-transform: lowercase;
+}
+
+p::first-letter {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+table {
+    border: double red;
+}
+
+img{
+    border: dashed;
+}
+
+.primerafila{
+    border: 3px dotted black;
+}
+
+.segundafila{
+    border: 3px solid black;
+}
+
+.links:visited {
+    visibility: hidden;
+    color: white;
+}
+
+.links:hover {
+    font-size: 36px
+}

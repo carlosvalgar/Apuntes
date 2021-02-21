@@ -1,0 +1,39 @@
+Algoritmo Aprovar_UF
+	Escribir '¿Cual es tu nota de prácticas?'
+	Leer practica
+	Escribir '¿Cual es tu nota de proyecto?'
+	Leer proyecto
+	Escribir 'Cuantos exámenes has realizado?'
+	Leer examen
+	Si examen<2 Entonces
+		Escribir '¿Que nota tienes en el examen?'
+		Leer nota
+		Si nota<5 Entonces
+			notafinal <- nota
+		SiNo
+			notafinal <- 0.4*practica+0.3*proyecto+0.3*nota
+		FinSi
+	SiNo
+		Escribir '¿Que nota tienes en el primer examen?'
+		Leer nota1
+		Escribir '¿Que nota tienes en el segundo examen?'
+		Leer nota2
+		nota <- (nota1+nota2)/2
+		Si nota1<3.5 O nota2<3.5 Entonces
+			notafinal <- nota
+		SiNo
+			Si nota<5 Entonces
+				notafinal <- nota
+			SiNo
+				notafinal <- 0.4*practica+0.3*proyecto+0.3*nota
+			FinSi
+		FinSi
+	FinSi
+	Escribir "Tu nota final es un: ",notafinal,"."
+	Si notafinal<5 Entonces
+		Escribir "Has suspendido la UF."
+	SiNo
+		Escribir "Has aprovado la UF!"
+	FinSi
+FinAlgoritmo
+

@@ -1,0 +1,17 @@
+Algoritmo juego_virus
+	puntos <- 15
+	Escribir "¿Cuantos órganos te han salido?"
+	Leer organo
+	Si organo<2 Entonces
+		Si organo<1 Entonces
+			puntos <- puntos-5
+		SiNo
+			puntos <- puntos-3
+		FinSi
+		Escribir "Que pena, has perdido, te quedas con ",puntos," puntos"
+	SiNo
+		puntos <- puntos+5
+		Escribir "Enhorabuena has ganado, tus puntos suben a ",puntos
+	FinSi
+FinAlgoritmo
+

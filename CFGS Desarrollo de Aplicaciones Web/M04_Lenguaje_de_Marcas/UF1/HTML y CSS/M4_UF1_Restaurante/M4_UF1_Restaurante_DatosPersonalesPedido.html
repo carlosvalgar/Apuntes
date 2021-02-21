@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Chino Capuchino</title>
+</head>
+
+<body>
+	<form action ="M4_UF1_Restaurante_Confirmacion.html" method="get">
+		<h1 id=menu>Elije tu menú</h1>
+		<table border=1>
+			<thead>
+				<tr>
+					<th colspan="4">Menú del Chino Capuchino</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th colspan="2">Primeros Platos</th>
+					<th>Precio</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td><img src="https://varianity.files.wordpress.com/2019/10/bade1f66-8265-4d56-a68c-c5d4b2450269.jpeg" alt="Foto Curry suave con verduras" height=50 width=50></td>
+					<td>Curry Suave con Verduras</td>
+					<td>5,50</td>
+					<td><input type="checkbox" name="item1" id="item1" value="Curry suave con verduras::5,50"></td>				
+				</tr>
+				<tr>
+					<td><img src="https://media-cdn.tripadvisor.com/media/photo-s/11/63/3d/0d/rollitos-de-pollo-al.jpg" alt="Foto Rollitos de Pollo al Curry" height=50 width=50></td>
+					<td>Rollitos de Pollo al Curry</td>
+					<td>6,25</td>
+					<td><input type="checkbox" name="item2" id="item2" value="Rollitos de pollo al curry::6,25"></td>				
+				</tr>
+				<tr>
+					<th colspan="2">Segundos Platos</th>
+					<th>Precio</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td><img src="https://www.196flavors.com/wp-content/uploads/2019/11/yakisoba-2-FP.jpg" alt="Foto de Yakisoba" height=50 width=50></td>
+					<td>Yakisoba</td>
+					<td>7,75</td>
+					<td><input type="checkbox" name="item3" id="item3" value="Yakisoba::7,75"></td>				
+				</tr>
+				<tr>
+					<td><img src="https://media-cdn.tripadvisor.com/media/photo-s/0f/44/3b/5b/pad-woon-sen.jpg" alt="Foto de Pad Won Sen" height=50 width=50></td>
+					<td>Pad Won Sen</td>
+					<td>6,75</td>
+					<td><input type="checkbox" name="item4" id="item4" value="Pad Won Sen::6,75"></td>				
+				</tr>
+			</tbody>
+		</table>
+		<p>¡Elige tu Salsa Gratis!</p>
+		<input type="radio" name="salsa" id="agridulce" value="Salsa Agridulce" checked>
+		<label>Salsa Agridulce</label>
+		<br>
+		<input type="radio" name="salsa" id="soja" value="Salsa de Soja">
+		<label>Salsa de Soja</label>
+		<br>
+		<input type="radio" name="salsa" id="chiles" value="Salsa de Chiles">
+		<label>Salsa de Chiles</label>
+		<br><br>
+	    <label for="comentarios">Comentarios</label>
+	    <br>
+	    <textarea id="comentarios" name="comentarios" rows="5" cols="100"></textarea>
+		<hr>
+		<table>
+			<tr>
+				<td width="140">Nombre:</td>
+				<td width="240"><input type="text" name="nombre" id="nombre"></td>
+				<td rowspan="2">Método de Pago</td>
+			</tr>
+			<tr>
+				<td>Apellidos:</td>
+				<td><input type="text" name="apellidos" id="apellidos"></td>
+			</tr>
+			<tr>
+				<td>Teléfono:</td>
+				<td><input type="text" name="telefono" id="telefono"></td>
+				<td rowspan="2">
+					<select name="pago" id="pago">
+	            		<option value="Efectivo">Efectivo</option>
+	            		<option value="Visa">Visa</option>
+	            		<option value="Mastercard">Mastercard</option>
+	        		</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Dirección:</td>
+				<td><input type="text" name="direccion" id="direccion"></td>
+			</tr>
+		</table>
+		<button>Resumen Pedido</button>
+	</form>
+</body>
+
+</html>

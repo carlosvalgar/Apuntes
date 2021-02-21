@@ -1,0 +1,11 @@
+Algoritmo mas_que_cero
+	Escribir "Introduc 10 números y te diré cuales eran mayor que 0:"
+	Para i<-10 Hasta 1 Con Paso -1 Hacer
+		Escribir "Te quedan ",i," números."
+		Leer num
+		Si num>0 Entonces
+			Escribir num," es mayor que 0!"
+		FinSi
+	FinPara
+FinAlgoritmo
+

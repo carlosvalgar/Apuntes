@@ -1,0 +1,10 @@
+Algoritmo banco
+	Escribir "Cuántos dólares quieres comprar?"
+	Leer dolar
+	recargo <- 0.2
+	euro <- 0.85
+	dolar <- dolar+(dolar*recargo)
+	coste <- dolar*euro
+	Escribir "Te costará ",coste," euros."
+FinAlgoritmo
+

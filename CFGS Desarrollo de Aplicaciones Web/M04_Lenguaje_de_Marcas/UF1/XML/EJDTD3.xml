@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ciudades [
+        <!ELEMENT ciudades (ciudad+)>
+        <!ELEMENT ciudad (nombre|pais)+>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT pais (#PCDATA)>
+        <!ATTLIST pais continente (Asia|Africa|America_Del_Norte|America_del_Sur|Antartida|Europa|Oceania) #REQUIRED>
+]>
+
+<ciudades>
+    <ciudad>
+        <nombre>Nueva Delhi</nombre>
+        <pais continente="Asia">India</pais>
+    </ciudad>
+    <ciudad>
+        <nombre>Lisboa</nombre>
+        <pais continente="Europa">Portugal</pais>
+    </ciudad>
+    <ciudad>
+        <nombre>El Cairo</nombre>
+        <pais continente="Africa">Egipto</pais>
+    </ciudad>
+</ciudades>
+
+<!-- Existe al menos 1 ciudad
+nombre y pais pueden colorse en cualquier orden
+el atributo continente es obligatorio 
+el atributo continente solo puede aceptar los siguientes valores:
+Asia, África, América Del Norte, América del Sur, Antártida, Europa, Oceanía -->

@@ -1,0 +1,17 @@
+Algoritmo Potencia
+	Escribir "Introduce dos números para ver si són potencia:"
+	Escribir "Introduce el número base:"
+	Leer num
+	Escribir "Introduce el número potencia:"
+	Leer pot
+	expo <- pot/num
+	Mientras expo!=1 y expo>0 Hacer
+		expo <- expo/num
+	FinMientras
+	Si expo=1 Entonces
+		Escribir "True"
+	SiNo
+		Escribir "False"
+	FinSi
+FinAlgoritmo
+

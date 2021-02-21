@@ -1,0 +1,12 @@
+Algoritmo tabla_de_multiplicar
+	Repetir
+		Escribir "Escribe un nombre entero positivo:"
+		Leer num
+	Hasta Que num>=0
+	Escribir "La tabla del ",num,":"
+	Para i<-0 Hasta 10 Hacer
+		prod = num*i
+		Escribir num," x ",i," = ",prod
+	FinPara
+FinAlgoritmo
+

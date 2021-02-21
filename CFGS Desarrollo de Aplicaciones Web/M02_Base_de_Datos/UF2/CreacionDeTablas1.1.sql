@@ -1,0 +1,42 @@
+/* CREATE DATABASE MER_ACTIVIDADES;
+*/
+CREATE TABLE Towns (
+Name VARCHAR(20) PRIMARY KEY,
+Population INT(10));
+
+CREATE TABLE Schools (
+Code INT AUTO_INCREMENT PRIMARY KEY,
+Name VARCHAR (20),
+TownName VARCHAR (20),
+CONSTRAINT fk_Town
+FOREIGN KEY (TownName)
+REFERENCES Towns(Name));
+
+CREATE TABLE Children (
+Code INT AUTO_INCREMENT PRIMARY KEY,
+FirstName VARCHAR(20),
+LastName VARCHAR(20),
+Phone INT(9),
+TownName VARCHAR (20),
+SchoolCode INT,
+CONSTRAINT fk_Town2
+FOREIGN KEY (TownName)
+REFERENCES Towns(Name),
+CONSTRAINT fk_School
+FOREIGN KEY (SchoolCode)
+REFERENCES Schools(Code));
+
+CREATE TABLE Activities (
+Name VARCHAR(20) PRIMARY KEY);
+
+CREATE TABLE ActivitiesOffer (
+Score INT(4),
+Capacity INT (4),
+SchoolCode INT,
+ActivitiesName VARCHAR(20),
+CONSTRAINT fk_School2
+FOREIGN KEY (SchoolCode)
+REFERENCES Schools(Code),
+CONSTRAINT fk_Activities
+FOREIGN KEY (ActivitiesName)
+REFERENCES Activities(Name));

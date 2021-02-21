@@ -1,0 +1,16 @@
+Algoritmo número_primo
+	Escribir 'Introduce un número:'
+	Leer num
+	Para i<-1 Hasta num Hacer
+		div <- num MOD i
+		Si div=0 Entonces
+			prim <- prim+1
+		FinSi
+	FinPara
+	Si prim<=2 Entonces
+		Escribir 'Es un número primo.'
+	SiNo
+		Escribir 'No es un número primo.'
+	FinSi
+FinAlgoritmo
+

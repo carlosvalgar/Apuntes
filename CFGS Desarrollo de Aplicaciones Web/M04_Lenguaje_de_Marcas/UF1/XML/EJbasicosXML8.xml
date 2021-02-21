@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<facturas>
+    <factura codigoFactura = "1">
+        <fechaEmision>12 - 12 - 2020 </fechaEmision>
+        <vendedor>Carlos</vendedor>
+        <cliente>
+            <dni>12345678X</dni>
+            <nombre>Pepe</nombre>
+            <direccion>Calle piruleta</direccion>
+            <codigoPostal>12345</codigoPostal>
+            <poblacion>Chuchelia</poblacion>
+        </cliente>
+        <producto>
+            <cantidad>12</cantidad>
+            <denominacion>Martillo de chuche</denominacion>
+            <precioUnitario>12.45</precioUnitario>
+            <iva>4%</iva>
+        </producto>
+        <producto>
+            <cantidad>23</cantidad>
+            <denominacion>Regaliz</denominacion>
+            <precioUnitario>0.54</precioUnitario>
+            <iva>21%</iva>
+        </producto>
+        <producto>
+            <cantidad>34</cantidad>
+            <denominacion>Nubes</denominacion>
+            <precioUnitario>9999.99</precioUnitario>
+            <iva>21%</iva>
+        </producto>
+        <precioFactura>0</precioFactura>
+        <descuento>100%</descuento>
+    </factura>
+</facturas>

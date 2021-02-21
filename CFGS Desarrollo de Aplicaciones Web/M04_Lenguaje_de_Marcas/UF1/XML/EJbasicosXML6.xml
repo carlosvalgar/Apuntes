@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<arboles>
+    <arbol nombreCientifico = "Acer monspessulanum">
+        <nombreComun>Arce de Montpellier, Arce menor</nombreComun>
+        <vegetacion>Caducifolio</vegetacion>
+        <altura>De 6 a 10 metros</altura>
+        <formaEstructura>Coma esférica. Tronco principal recto con bifurcaciones. Ramaje colgante.</formaEstructura>
+        <colorPrimavera>Haz verde brillante, envés verde blanquecino.</colorPrimavera>
+        <resistenciaHeladas>Heladas fuertes(hasta -15ºC)</resistenciaHeladas>
+    </arbol>
+    <arbol nombreCientifico = "Olea europea">
+        <nombreComun>Olivo</nombreComun>
+        <vegetacion>Perenne</vegetacion>
+        <altura>De 8 a 15 metros.</altura>
+        <formaEstructura>Copa irregular. Tronco principal irregular con bifurcaciones.</formaEstructura>
+    </arbol>
+    <arbol nombreCientifico = "Ramaje tortuoso">
+        <colorPrimavera>Haz verde oscuro, envés verde plateado.</colorPrimavera>
+        <resistenciaHeladas>Heladas medias (Hasta -10ºC).</resistenciaHeladas>
+    </arbol>
+    <arbol nombreCientifico = "Platanus orientalis">
+        <nombreComun>Platano</nombreComun>
+        <vegetacion>Caducifolio</vegetacion>
+        <altura>De 20 a 25 metros.</altura>
+        <formaEstructura>Copa ovoidal. Tronco principal recto. Ramaje expandido.</formaEstructura>
+        <colorPrimavera>Haz verde medio, envés verde claro.</colorPrimavera>
+        <colorOtono>Ocre.</colorOtono>
+        <resistenciaHeladas>Heladas fuertes (hasta -20ºC)</resistenciaHeladas>
+    </arbol>
+</arboles>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE temporada[
+        <!ELEMENT temporada(jornada+)>
+            <!ATTLIST temporada anno CDATA #REQUIRED>
+        <!ELEMENT jornada (partido+)>
+            <!ATTLIST jornada num_jornada CDATA #REQUIRED>
+        <!ELEMENT partido (fecha, recinto, equipo+)>
+            <!ATTLIST partido num_partido CDATA #REQUIRED
+                                resultado CDATA #REQUIRED>
+        <!ELEMENT fecha (#PCDATA)>
+        <!ELEMENT recinto (#PCDATA)>
+            <!ATTLIST recinto espectadores CDATA #REQUIRED>
+        <!ELEMENT equipo (#PCDATA)>
+]>
+
+<temporada anno = "2021">
+    <jornada num_jornada = "1">
+        <partido num_partido = "1" resultado = "2-1">
+            <fecha>2021-02-15</fecha>
+            <recinto espectadores = "50000">Riot Center</recinto>
+            <equipo>G2 Arctic</equipo>
+            <equipo>Movistar Riders</equipo>
+        </partido>
+        <partido num_partido = "2" resultado = "1-2">
+            <fecha>2021-02-16</fecha>
+            <recinto espectadores = "50000">Riot Center</recinto>
+            <equipo>Vodafone Giants</equipo>
+            <equipo>MAD Lions</equipo>
+        </partido>
+    …
+    </jornada>
+    <jornada num_jornada = "2">
+    …
+    </jornada>
+    …
+</temporada>

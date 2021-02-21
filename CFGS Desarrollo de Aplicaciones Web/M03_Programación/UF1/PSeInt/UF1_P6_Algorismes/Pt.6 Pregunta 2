@@ -1,0 +1,16 @@
+Algoritmo Personas
+	men <- 0
+	maj <- 0
+	Para i<-1 Hasta 200 Hacer
+		Escribir "Escribe tu edad:"
+		Leer edad
+		Si edad>=18 Entonces
+			maj <- maj+1
+		SiNo
+			men <- men+1
+		FinSi
+	FinPara
+	Escribir "Hay ",men," personas menores de edad."
+	Escribir "Hay ",maj," personas mayor de edad."
+FinAlgoritmo
+

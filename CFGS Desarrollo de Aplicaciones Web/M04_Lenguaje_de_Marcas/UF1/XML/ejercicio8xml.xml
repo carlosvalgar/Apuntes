@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<deportistasLol>
+    <deportista>
+        <nombre>Lee Sang-hyeok</nombre>
+        <apodo>Faker</apodo>
+        <paisNacimiento>Corea del sur</paisNacimiento>
+        <Residencia>Corea</Residencia>
+        <edad>24</edad>
+        <rol>Mid Laner</rol>
+        <campeonesFavoritos>
+            <campeon>Zed</campeon>
+            <campeon>LeBlanc</campeon>
+            <campeon>Ahri</campeon>
+            <campeon>Azir</campeon>
+            <campeon>Ryze</campeon>
+        </campeonesFavoritos>
+    </deportista>
+    <deportista>
+        <nombre>Rasmus Borregaard Winther</nombre>
+        <apodo>Caps</apodo>
+        <paisNacimiento>Dinamarca</paisNacimiento>
+        <Residencia>Europa</Residencia>
+        <edad>21</edad>
+        <rol>Mid Laner</rol>
+        <campeonesFavoritos>
+            <campeon>Ryze</campeon>
+            <campeon>Yasuo</campeon>
+            <campeon>Zoe</campeon>
+            <campeon>Aurelion Sol</campeon>
+        </campeonesFavoritos>
+    </deportista>
+</deportistasLol>

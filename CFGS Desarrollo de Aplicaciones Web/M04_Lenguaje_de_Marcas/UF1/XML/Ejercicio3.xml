@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE videojuegos[
+        <!ELEMENT videojuegos (juego)>
+        <!ELEMENT juego (titulo, desarrollador, distribuidor, plataformas)>
+            <!ATTLIST juego anno CDATA #REQUIRED>
+        <!ELEMENT titulo (#PCDATA)>
+        <!ELEMENT desarrollador (nombre, sede, ceo)>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT sede (#PCDATA)>
+        <!ELEMENT ceo (#PCDATA)>
+        <!ELEMENT distribuidor EMPTY>
+            <!ATTLIST distribuidor nombre_dist CDATA #REQUIRED>
+        <!ELEMENT plataformas (plataforma+)>
+        <!ELEMENT plataforma (nombre)>
+]>
+
+<videojuegos>
+    <juego anno = "2017">
+        <titulo>Hollow knight</titulo>
+        <desarrollador>
+            <nombre>Cherry team</nombre>
+            <sede>No la se</sede>
+            <ceo>No la se</ceo>
+        </desarrollador>
+        <distribuidor nombre_dist = "cherry_team"/>
+        <plataformas>
+            <plataforma>
+                <nombre>PC</nombre>
+            </plataforma>
+            <plataforma>
+                <nombre>Nintendo Switch</nombre>
+            </plataforma>
+        </plataformas>
+    </juego>
+</videojuegos>

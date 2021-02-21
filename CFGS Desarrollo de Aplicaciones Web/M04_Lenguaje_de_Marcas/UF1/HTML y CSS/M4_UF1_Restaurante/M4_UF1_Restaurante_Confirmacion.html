@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Resumen</title>
+		<script>
+			function findGetParameter(parameterName) {
+				var result = null,
+				tmp = [];
+				location.search.substr(1).split("&").forEach(function (item) {
+				tmp = item.split("=");
+				if (tmp[0] === parameterName) 
+					result = decodeURIComponent(tmp[1]);
+				});
+				return result;
+			}
+			function getDish(param){
+				var result = null;
+				tmp = [];
+				tmp = param.split("::");
+				result = tmp[0];
+				return result;
+			}
+			function getPrice(param){
+				var result = null;
+				tmp = [];
+				tmp = param.split("::");
+				result = tmp[1];
+				return result;
+			}
+		</script>
+	</head>
+
+	<body>
+	
+		<h1>Datos Personales</h1>
+
+		<table class="datosPersonales" >
+			<tr>
+				<td width="150"><p>Nombre: </p></td>
+				<td width="150"><p id="nombre"></p></td>
+			</tr>
+			<tr>
+				<td><p>Apellidos: </p></td>
+				<td><p id="apellidos"></p></td>
+			</tr>
+			<tr>
+				<td><p>Dirección: </p></td>
+		    	<td><p id="direccion"></p></td>
+			</tr>
+		    <tr>
+				<td><p>Telefono: </p></td>
+				<td><p id="telefono"></p></td>
+		  	</tr>
+		  	<tr>
+				<td><p>Método de pago: </p></td>
+				<td><p id="pago"></p></td>
+		  	</tr>
+		  	<tr>
+				<td><p>Comentarios: </p></td>
+		    	<td><p id="comentarios"></p></td>
+		  	</tr>
+		</table>
+		<h1>Resumen Pedido</h1>
+
+		<table class="pedido" >
+			<tr>
+				<td width="250"><p id="item1"></p></td><td width="50"><p id="precio_item1"></p></td>
+			</tr>
+			<tr>
+				<td><p id="item2"></p></td><td><p id="precio_item2"></p></td>
+			</tr>
+			<tr>
+				<td><p id="item3"></p></td><td><p id="precio_item3"></p></td>
+			</tr>
+		    <tr>
+				<td><p id="item4"></p></td><td><p id="precio_item4"></p></td>
+			</tr>	
+		    <tr>
+				<td><p id="item5"></p></td><td><p id="precio_item5"></p></td>
+			</tr>
+			<tr>
+				<td><p id="item6"></p></td><td><p id="precio_item6"></p></td>
+			</tr>
+			<tr>
+				<td><p id="salsa"></p></td><td></td>
+			</tr>
+			<tr>
+				<td><p><h2>Total:</h2></p></td><td><p id="total"></p></td>
+			</tr>
+		</table>
+
+		<p>
+			<a href="M4_UF1_Restaurante_Principal.html">Volver a la página principal</a>
+		</p>
+
+		<script>
+			var x = findGetParameter("nombre")
+			document.getElementById("nombre").innerHTML =  x.replace(/\+/g," ");
+			var x = findGetParameter("apellidos")
+			document.getElementById("apellidos").innerHTML =  x.replace(/\+/g," ");
+			var x = findGetParameter("direccion")
+			document.getElementById("direccion").innerHTML =  x.replace(/\+/g," ");
+			var x = findGetParameter("telefono")
+			document.getElementById("telefono").innerHTML =  x.replace(/\+/g," ");
+			var x = findGetParameter("pago")
+			document.getElementById("pago").innerHTML =  x.replace(/\+/g," ");
+			var x = findGetParameter("comentarios")
+			document.getElementById("comentarios").innerHTML =  x.replace(/\+/g," ");
+
+			
+			var total = parseFloat("0")
+			var x = findGetParameter("item1")
+			if (x != null)
+			{
+				//alert("value x is not null"); 
+				var y = getDish(x);
+				var z = getPrice(x);
+				document.getElementById("item1").innerHTML = y.replace(/\+/g," ");
+				document.getElementById("precio_item1").innerHTML = z;
+				total = total + parseFloat(z)
+			}
+			
+			
+			var x = findGetParameter("item2")
+			if (x != null)
+			{
+				var y = getDish(x);
+				var z = getPrice(x);
+				document.getElementById("item2").innerHTML =  y.replace(/\+/g," ");
+				document.getElementById("precio_item2").innerHTML = z;
+				total = total + parseFloat(z)
+			}
+			
+			var x = findGetParameter("item3")
+			if (x != null)
+			{
+				var y = getDish(x);
+				var z = getPrice(x);
+				document.getElementById("item3").innerHTML =  y.replace(/\+/g," ");
+				document.getElementById("precio_item3").innerHTML = z;
+				total = total + parseFloat(z)
+			}
+			
+			var x = findGetParameter("item4")
+			if (x != null)
+			{
+				var y = getDish(x);
+				var z = getPrice(x);
+				document.getElementById("item4").innerHTML =  y.replace(/\+/g," ");
+				document.getElementById("precio_item4").innerHTML = z;
+				total = total + parseFloat(z)
+			}
+			
+			var x = findGetParameter("item5")
+			if (x != null)
+			{
+				var y = getDish(x);
+				var z = getPrice(x);
+				document.getElementById("item5").innerHTML =  y.replace(/\+/g," ");
+				document.getElementById("precio_item5").innerHTML = z;
+				total = total + parseFloat(z)
+			}
+			
+			var x = findGetParameter("item6")
+			if (x != null)
+			{
+				var y = getDish(x);
+				var z = getPrice(x);
+				document.getElementById("item6").innerHTML =  y.replace(/\+/g," ");
+				document.getElementById("precio_item6").innerHTML = z;
+				total = total + parseFloat(z)
+			}
+			var x = findGetParameter("salsa")
+			document.getElementById("salsa").innerHTML =  x.replace(/\+/g," ");
+			
+			document.getElementById("total").innerHTML = total;
+				
+		</script>
+	</body>
+</html>

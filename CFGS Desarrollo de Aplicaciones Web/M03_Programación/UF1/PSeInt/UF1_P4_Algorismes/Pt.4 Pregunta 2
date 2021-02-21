@@ -1,0 +1,15 @@
+Algoritmo media
+	Escribir 'Añade los números de los que quieres hacer la media.'
+	Escribir 'Para terminar de introducir datos introduzca el -1'
+	usuario <- 0
+	i <- 0
+	j <- -1
+	Mientras usuario!=-1 Hacer
+		i <- i+usuario
+		j <- j+1
+		Leer usuario
+	FinMientras
+	med <- i/j
+	Escribir 'La media de tus números es: ',med
+FinAlgoritmo
+

@@ -1,0 +1,49 @@
+Algoritmo Fecha
+	Escribir 'Introduce la fecha en valores numéricos.'
+	Escribir 'Introduce el dia:'
+	Leer dia
+	Mientras dia<1 o dia>31 Hacer
+		Escribir "ERROR: Introduce un dia entre 1 y 31:"
+		Leer dia
+	FinMientras
+	Escribir 'Introduce el mes (un número del 1 al 12):'
+	Leer mes
+	Mientras mes<1 o mes>12 Hacer
+		Escribir "ERROR: Introduce un mes entre 1 y 12:"
+		Leer mes
+	FinMientras
+	Escribir 'Introduce el año (un número mayor que 0):'
+	Leer año
+	Mientras año<=0 Hacer
+		Escribir "ERROR: Introduce un año mayor que 0:"
+		Leer año
+	FinMientras
+	Segun mes  Hacer
+		1:
+			mesnum <- 'enero'
+		2:
+			mesnum <- 'febrero'
+		3:
+			mesnum <- 'marzo'
+		4:
+			mesnum <- 'abril'
+		5:
+			mesnum <- 'mayo'
+		6:
+			mesnum <- 'junio'
+		7:
+			mesnum <- 'julio'
+		8:
+			mesnum <- 'agosto'
+		9:
+			mesnum <- 'septiembre'
+		10:
+			mesnum <- 'octubre'
+		11:
+			mesnum <- 'noviembre'
+		12:
+			mesnum <- 'diciembre'
+	FinSegun
+	Escribir 'La fecha es: ',dia,' de ',mesnum,' de ',año,'.'
+FinAlgoritmo
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mensaje [
+        <!ELEMENT mensaje (remitente, destinatario, asunto, texto)>
+        <!ELEMENT remitente (nombre, email)>
+        <!ELEMENT destinatario (nombre, email)>
+        <!ELEMENT asunto (#PCDATA)>
+        <!ELEMENT texto (parrafo*)>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ELEMENT parrafo (#PCDATA)>
+]>
+
+<mensaje>
+    <remitente>
+        <nombre>Alfredo Reino</nombre>
+        <email>alf@ibium.com</email>
+    </remitente>
+    <destinatario>
+        <nombre>Bill Clinton</nombre>
+        <email>president@whitehouse.gov</email>
+    </destinatario>
+    <asunto>Hola Bill</asunto>
+    <texto>
+        <parrafo>¿Hola qué tal?</parrafo>
+        <parrafo>Hace mucho tiempo que no escribes. A ver si llamas y quedamos pronto.</parrafo>
+        <parrafo>Un saludo.</parrafo>
+    </texto>
+</mensaje>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mensaje [
+        <!ELEMENT mensaje (remitente, destinatario, asunto, texto)>
+        <!ELEMENT remitente (nombre, email)>
+        <!ELEMENT destinatario (nombre, email)>
+        <!ELEMENT asunto (#PCDATA)>
+        <!ELEMENT texto (parrafo*)>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ELEMENT parrafo (#PCDATA)>
+]>
+<mensaje>
+    <remitente>
+        <nombre>Elías</nombre>
+        <email>alias@massivedarkness.com</email>
+    </remitente>
+    <destinatario>
+        <nombre>Baldric</nombre>
+        <email>baldric@zombicidebp.com</email>
+    </destinatario>
+    <asunto/>
+    <texto>
+        <parrafo>A ver cuando nos vemos, no?</parrafo>
+        <parrafo>Cuando quieras puedes pasarte a matar unos zombis con nosotros!</parrafo>
+    </texto>
+</mensaje>

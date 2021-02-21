@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<discotecas>
+    <discoteca>
+        <nombre>Razzmatazz</nombre>
+        <direccion>Almogàvers, 122, Barcelona, 08005</direccion>
+        <horario>V-D de 1am a 6am</horario>
+        <telefono>933208200</telefono>
+        <web>https://www.salarazzmatazz.com/</web>
+        <estiloMusica>Electrónica, Pop, Disco, Dance, Indie</estiloMusica>
+    </discoteca>
+    <discoteca>
+        <nombre>Sala Apolo</nombre>
+        <direccion>Nou de la Rambla, 113, Barcelona, 08004</direccion>
+        <horario>De lunes a domingo de 23.30h a 6h</horario>
+        <telefono>934414001</telefono>
+        <web>https://www.sala-apolo.com/es/</web>
+        <estiloMusica>Dance, Indie, Electrónica</estiloMusica>
+    </discoteca>
+</discotecas>

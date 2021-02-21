@@ -1,0 +1,18 @@
+.main_container { display: flex; }
+
+.left_box, .right_box { background: yellow; flex-grow: 1; width: 10%; }
+
+.container1_flex { display: flex; border: 10px solid black; flex-direction: column; align-items: center; flex-grow: 4; }
+
+.box { padding: 10px; text-align: center; flex-grow: 1; }
+
+.box1 { background:#1abc9c; width: 5%; }
+.box2 { background:#3498db; width: 10%; }
+.box3 { background:#9b59b6; width: 15%; }
+.box4 { background:#34495e; width: 20%; }
+.box5 { background:#f1c40f; width: 25%; }
+.box6 { background:#e67e22; width: 25%; }
+.box7 { background:#e74c3c; width: 20%; }
+.box8 { background:#bdc3c7; width: 15%; }
+.box9 { background:#2ecc71; width: 10%; }
+.box10 { background:#16a085; width: 5%; }

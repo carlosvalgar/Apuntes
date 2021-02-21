@@ -1,0 +1,8 @@
+Algoritmo Mil_Dosmil
+	i <- 1000
+	Mientras i<=2000 Hacer
+		Escribir i
+		i <- i+1
+	FinMientras
+FinAlgoritmo
+

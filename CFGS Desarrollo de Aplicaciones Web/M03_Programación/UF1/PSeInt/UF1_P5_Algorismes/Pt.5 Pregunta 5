@@ -1,0 +1,14 @@
+Algoritmo múltiplos
+	Escribir "Escribe un número entero:"
+	Leer base
+	Escribir "Escribe hasta que número quieres saber sus múltiples:"
+	Leer tope
+	c <- 1
+	mult <- base
+	Repetir
+		Escribir mult
+		c <- c+1
+		mult <- base*c
+	Hasta Que mult>tope
+FinAlgoritmo
+

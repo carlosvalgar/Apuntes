@@ -1,0 +1,21 @@
+<!-- Documento 1 -->
+<?xml version="1.0"?>
+<documento>
+    <p>Mi Primer <destacar importancia = "1">documento XML</destacar></p>
+    <p>Comienza con la etiqueta</p>
+    <p>A continuacion colocamos un elemento sin contenido</p>
+    <imagen fichero = "imagen.gif"></imagen>
+</documento>
+<!-- Colocamos bien las identaciones de los tags para leerlo con mas facilidad, los tags se cierran con > no ], sobra un tag documento, falta cerrar el tag imagen, poner comillas en el 1 -->
+
+<!-- Documento 2 -->
+<?xml version="1.0"?>
+<libros>
+    <libro id = "quijote">
+        <titulo>El Quijote</titulo>
+        <autor nombre = "cervantes"></autor>
+        <descripcion>Es el mejor libro de cervantes.</descripcion>
+    </libro>
+</libros>
+
+<!-- Cerramos los tags correctamente,  quitamos de atributo nombre = cervantes, evitamos el < entre medio del texto quitamos la L mayuscula de Libros-->

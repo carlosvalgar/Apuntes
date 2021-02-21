@@ -1,0 +1,12 @@
+Algoritmo Sumatorio
+	c <- 10
+	sum <- 0
+	Mientras c!=0 Hacer
+		Escribir "Hola introduce ",c," numeros más."
+		Leer num
+		sum <- sum+num
+		c <- c-1
+	FinMientras
+	Escribir "La suma de los números es: ",sum
+FinAlgoritmo
+

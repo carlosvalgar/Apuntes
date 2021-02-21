@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Netflix[
+        <!ELEMENT Netflix (contenido*)>
+        <!ELEMENT contenido (titulo, temporadas?, resumen)>
+        <!ELEMENT titulo (#PCDATA)>
+        <!ELEMENT resumen (#PCDATA)>
+        <!ELEMENT temporadas (temporada+)>
+        <!ELEMENT temporada (capitulos?)>
+        <!ELEMENT capitulos (capitulo+)>
+        <!ELEMENT capitulo (numero, titulo_capitulo, duracion)>
+        <!ELEMENT numero (#PCDATA)>
+        <!ELEMENT titulo_capitulo (#PCDATA)>
+        <!ELEMENT duracion (#PCDATA)>
+        <!ATTLIST contenido tipo (Serie|Pelicula) #REQUIRED>
+        <!ATTLIST contenido propiedad_de CDATA #IMPLIED>
+        <!ATTLIST temporadas num_temporadas CDATA #REQUIRED>
+        <!ATTLIST temporada num CDATA #REQUIRED>
+        <!ATTLIST temporada fecha_estreno CDATA #IMPLIED>
+]>
+
+<Netflix>
+	<contenido tipo="Serie" propiedad_de="Netflix">
+		<titulo>The Witcher</titulo>
+		<temporadas num_temporadas="1">
+			<temporada num="1" fecha_estreno="20/12/2019">
+				<capitulos>
+					<capitulo>
+						<numero>1</numero>
+						<titulo_capitulo>El mal menor</titulo_capitulo>
+						<duracion>60 min</duracion>
+					</capitulo>
+				</capitulos>
+			</temporada>
+		</temporadas>
+		<resumen>Serie sobre las aventuras de Geralt de Rivia</resumen>
+	</contenido>
+	<contenido tipo="Pelicula">
+		<titulo>Origen</titulo>
+		<resumen>Dom Cobb (Leonardo DiCaprio) es un ladrón, prófugo de la justicia estadounidense, especializado en infiltrarse en los sueños para robar ideas, claves de bancos, etc. mientras sus víctimas duermen. Esto lo logra a través de un sueño inducido por un dispositivo conocido como "la máquina de los sueños", la cual administra un potente sedante que le permite compartir un mundo de sueños construido por la imaginación del atacante, que luego es ocupado por proyecciones mentales (subconsciente) del sujeto al que se le extrae la información, para que la persona no sospeche que está soñando.</resumen>
+	</contenido>
+</Netflix>

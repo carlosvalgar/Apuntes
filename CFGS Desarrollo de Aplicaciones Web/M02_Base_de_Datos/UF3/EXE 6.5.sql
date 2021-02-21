@@ -1,0 +1,40 @@
+SET SERVEROUTPUT ON;
+
+/*
+-- 3.- Version IF
+
+DECLARE
+NUM1 INT:= 2;
+NUM2 INT:= 3;
+NUM3 INT:= 3;
+
+BEGIN
+IF NUM3 = 1 THEN
+    DBMS_OUTPUT.PUT_LINE(NUM1||' + '||NUM2||' = '||(NUM1 + NUM2));
+    
+ELSIF NUM3 = 2 THEN
+    DBMS_OUTPUT.PUT_LINE(NUM1||' - '||NUM2||' = '||(NUM1 - NUM2));
+    
+ELSIF NUM3 = 3 THEN
+    DBMS_OUTPUT.PUT_LINE(NUM1||' * '||NUM2||' = '||(NUM1 * NUM2));
+    
+ELSE
+    DBMS_OUTPUT.PUT_LINE('ERROR: Operación no permitida');
+END IF;
+END;
+*/
+
+-- 3.- Version Case
+DECLARE
+NUM1 INT:= 2;
+NUM2 INT:= 3;
+NUM3 INT:= 3;
+
+BEGIN
+CASE
+    WHEN NUM3 = 1 THEN DBMS_OUTPUT.PUT_LINE(NUM1||' + '||NUM2||' = '||(NUM1 + NUM2));
+    WHEN NUM3 = 2 THEN DBMS_OUTPUT.PUT_LINE(NUM1||' - '||NUM2||' = '||(NUM1 - NUM2));
+    WHEN NUM3 = 3 THEN DBMS_OUTPUT.PUT_LINE(NUM1||' * '||NUM2||' = '||(NUM1 * NUM2));
+    ELSE DBMS_OUTPUT.PUT_LINE('ERROR: Operación no permitida');
+END CASE;
+END;

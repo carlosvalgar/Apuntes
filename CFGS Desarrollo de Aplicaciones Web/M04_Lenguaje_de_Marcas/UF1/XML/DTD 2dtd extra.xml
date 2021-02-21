@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT calendari (mes+)>
+<!ELEMENT mes (dia+)>
+<!ELEMENT dia (numero, nom)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+<!ATTLIST mes nom (Gener|Febrer|Marc|Abril|Maig|Juny|Juliol|Agost|Septembre|Octubre|Novembre|Desembre) #REQUIRED>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mensaje[
+        <!ELEMENT mensaje (email | carta) >
+        <!ELEMENT email (cabecera, asunto?, texto+)>
+        <!ATTLIST email respuesta (si | no ) “no “>
+        <!ELEMENT carta (encabezado | texto) >
+        <!ATTLIST carta respuesta (si | no ) “no “>
+        <!ELEMENT cabecera (emisor, receptor*,fecha?)>
+        <!ELEMENT asunto (#PCDATA)>
+        <!ELEMENT texto (#PCDATA | saludo )*>
+        <!ELEMENT encabezado (emisor,receptor*,fecha)>
+        <!ELEMENT emisor (#PCDATA)>
+        <!ELEMENT receptor (#PCDATA)>
+        <!ELEMENT fecha (#PCDATA)>
+        <!ELEMENT saludo (#PCDATA)>
+]>
+
+<mensaje>
+    <email respuesta = "si">
+        <cabecera>
+            <emisor>Carlos Guillermo Valenzuela Garcia</emisor>
+        </cabecera>
+        <asunto>RE: Examen</asunto>
+        <texto>
+            <saludo>Buenos dias</saludo>
+        </texto>
+        <texto>Espero que el XML generado a partir del DTD este correcto, un saludo.</texto>
+    </email>
+</mensaje>

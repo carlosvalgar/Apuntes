@@ -1,0 +1,18 @@
+.main_container { display:flex; }
+
+.left_box, .right_box { background-color: green; }
+
+.container1_flex { border: 5px solid black; display: flex; align-items: baseline; }
+
+.box { padding: 5px; }
+
+.box1 { background:#1abc9c; font-size: 30px; }
+.box2 { background:#3498db; font-size: 60px; }
+.box3 { background:#9b59b6; font-size: 90px; }
+.box4 { background:#34495e; font-size: 120px; }
+.box5 { background:#f1c40f; font-size: 150px; }
+.box6 { background:#e67e22; font-size: 30px; }
+.box7 { background:#e74c3c; font-size: 60px; }
+.box8 { background:#bdc3c7; font-size: 90px; }
+.box9 { background:#2ecc71; font-size: 120px; }
+.box10 { background:#16a085; font-size: 150px; }

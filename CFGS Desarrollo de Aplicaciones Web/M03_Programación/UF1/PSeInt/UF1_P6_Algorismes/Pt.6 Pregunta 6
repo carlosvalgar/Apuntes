@@ -1,0 +1,28 @@
+Algoritmo Género
+	j <- 0
+	Escribir "Introduce tu género, 1 para hombre, 2 para mujer y 3 para intersexual: "
+	Para i<-1 Hasta 10 Hacer
+		Leer gen
+		Mientras gen>3 o gen<1 Hacer
+			Escribir "Error: Introduce un número entre 1 y 3, 1 para hombre, 2 para mujer y 3 para intersexual:"
+			Leer gen
+		FinMientras
+		Si gen=1 Entonces
+			hombre <- hombre+1
+		SiNo
+			Si gen=2 Entonces
+				mujer <- mujer+1
+			SiNo
+				inter <- inter+1
+			FinSi
+		FinSi
+		j <- j+1
+	FinPara
+	porh <- (hombre/j)*100
+	porm <- (mujer/j)*100
+	pori <- (inter/j)*100
+	Escribir "El porcentaje de hombres es: ",porh,"%."
+	Escribir "El porcentaje de mujeres es: ",porm,"%."
+	Escribir "El porcentaje de intersexuales es: ",pori,"%."
+FinAlgoritmo
+

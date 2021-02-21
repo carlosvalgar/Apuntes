@@ -1,0 +1,17 @@
+Algoritmo eureka
+	Escribir 'Introduce el código, tienes 3 intentos.'
+	pass <- nose
+	c <- 2
+	Leer pass
+	Mientras pass!='eureka' Y c>0 Hacer
+		Escribir 'Te quedan ',c,' intentos.'
+		c <- c-1
+		Leer pass
+	FinMientras
+	Si c=0 Entonces
+		Escribir 'Te has quedado sin intentos.'
+	SiNo
+		Escribir 'Has acertado el código.'
+	FinSi
+FinAlgoritmo
+

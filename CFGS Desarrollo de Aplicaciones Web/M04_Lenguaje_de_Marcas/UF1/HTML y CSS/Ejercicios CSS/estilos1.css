@@ -1,0 +1,38 @@
+body {
+	background-color: cornflowerblue;
+}
+
+h1 {
+	text-align: center;
+	color: white;
+}
+
+h2 {
+	text-align: left;
+	color: white;
+}
+
+.parrafo1 {
+	background-color: yellow;
+	color: black;
+}
+
+.parrafo2 {
+	background-color: white;
+	color: blue;
+}
+
+#vehiculo {
+	border: 4px solid red;
+}
+
+.coche{
+float: left;
+margin: 4px;
+
+}
+
+.ciudadnevada{
+height: 480px;
+width: 640px;
+}

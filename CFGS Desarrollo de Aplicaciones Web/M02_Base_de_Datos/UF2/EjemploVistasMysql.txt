@@ -1,0 +1,7 @@
+CREATE OR REPLACE VIEW ciudadesConPaisesQueEmpiezanPorA AS
+SELECT paises.nombre AS "Nombre Pais", ciudades.nombre AS "Nombre Ciudad", paises.codigo
+FROM ciudades
+INNER JOIN paises ON ciudades.pais = paises.codigo
+WHERE paises.nombre LIKE ("C%");
+
+DROP VIEW ciudadesConPaisesQueEmpiezanPorA;

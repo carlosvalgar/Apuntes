@@ -1,0 +1,17 @@
+Algoritmo Random_con_3_intentos
+	i <- azar(10)
+	c <- 2
+	Escribir 'Adivina el número generado al azar, por favor escribe tu número:'
+	Leer usuario
+	Mientras i!=usuario Y c>0 Hacer
+		Escribir 'Has fallado, te quedan: ',c,' intentos.'
+		c <- c-1
+		Leer usuario
+	FinMientras
+	Si c!=0 Entonces
+		Escribir 'Has acertado, el número es: ',i,'.'
+	SiNo
+		Escribir 'Te has quedado sin intentos, más suerte la próxima vez'
+	FinSi
+FinAlgoritmo
+

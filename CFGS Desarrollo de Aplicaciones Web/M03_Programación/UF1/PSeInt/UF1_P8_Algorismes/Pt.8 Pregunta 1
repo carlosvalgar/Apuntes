@@ -1,0 +1,36 @@
+Algoritmo numeros
+	Escribir "Cuantos valores va a introducir?"
+	Leer cant
+	Mientras cant<=0 Hacer
+		Escribir "Imposible"
+		Escribir "Cuantos valores va a introducir?"
+		Leer cant
+	FinMientras
+	Para i<-1 Hasta cant Hacer
+		Si i=1 Entonces
+			Escribir "Escribe un número:"
+			Leer num1
+		SiNo
+			paim <- i%2
+			Si paim=0 Entonces
+				Escribir "Introduce un número diferente a ",num1,"."
+				Leer num2
+				Mientras num2=num1 Hacer
+					Escribir num2," es igual a ", num1,"!"
+					Escribir "Introduce un número diferente a ",num1,"."
+					Leer num2
+				FinMientras
+			SiNo
+				Escribir "Introduce un número diferente de ",num2,"."
+				Leer num1
+				Mientras num1=num2 Hacer
+					Escribir num1," es igual a ",num2,"!"
+					Escribir "Introduce un número diferente a ",num2,"."
+					Leer num1
+				FinMientras
+			FinSi
+		FinSi
+	FinPara
+	Escribir "Gracias por su colaboración."
+FinAlgoritmo
+

@@ -1,0 +1,13 @@
+Algoritmo Bucle_Valor_Absoluto
+	i <- 0
+	Mientras i<15 Hacer
+		Escribir "Introduzca su número:"
+		Leer num
+		Si num<0 Entonces
+			num = -num
+		FinSi
+		Escribir "Tu número es: ",num,"."
+		i <- i+1
+	FinMientras
+FinAlgoritmo
+

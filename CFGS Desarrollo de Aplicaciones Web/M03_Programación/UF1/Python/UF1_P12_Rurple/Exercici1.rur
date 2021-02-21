@@ -1,0 +1,31 @@
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+i=0
+move()
+pick_beeper()
+while i<=2:
+    c=0
+    while c<5:
+        move()
+        pick_beeper()
+        c+=1
+    turn_left()
+    move()
+    pick_beeper()
+    turn_left()
+    c=0
+    while c<5:
+        move()
+        pick_beeper()
+        c+=1
+    if i==2:
+        break
+    turn_right()
+    move()
+    pick_beeper()
+    turn_right()
+    i+=1
+
+turn_off()

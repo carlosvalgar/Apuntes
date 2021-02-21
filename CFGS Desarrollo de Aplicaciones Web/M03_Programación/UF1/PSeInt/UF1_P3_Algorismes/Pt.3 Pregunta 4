@@ -1,0 +1,11 @@
+Algoritmo Random
+	i <- azar(10)
+	Escribir "Adivina el número generado al azar, por favor escribe tu número:"
+	Leer usuario
+	Mientras i!=usuario Hacer
+		Escribir "Has fallado, vuelve a intentarlo:"
+		Leer usuario
+	FinMientras
+	Escribir "Has acertado, el número es: ",i,"."
+FinAlgoritmo
+

@@ -1,0 +1,33 @@
+body {
+    background-color: skyblue;
+    color: white;
+    text-align: justify;
+}
+
+.title {
+    text-align: center;
+}
+
+.subtitle1 {
+    color: darkred;
+}
+
+.parrafo1{
+    text-indent: 3em;
+}
+
+.subtitle2 {
+    color: darkorange;
+}
+
+.parrafo2{
+    text-decoration: line-through;
+}
+
+.subtitle3 {
+    color: gold;
+}
+
+.parrafo3{
+    text-decoration: underline red ;
+}

@@ -1,0 +1,26 @@
+Algoritmo media_max_min
+	Escribir 'Añade los números de los que quieres hacer la media.'
+	Escribir 'Para terminar de introducir datos introduzca el 0.'
+	Leer usuario
+	i <- 0
+	j <- 0
+	alto <- usuario
+	bajo <- usuario
+	Mientras usuario<>0 Hacer
+		i <- i+usuario
+		j <- j+1
+		Leer usuario
+		Si alto<usuario Entonces
+			alto <- usuario
+		SiNo
+			Si bajo>usuario Y usuario<>0 Entonces
+				bajo <- usuario
+			FinSi
+		FinSi
+	FinMientras
+	med <- i/j
+	Escribir 'La media de los valores introducidos es: ',med
+	Escribir 'El valor más alto ha sido: ',alto
+	Escribir 'El valor más bajo ha sido: ',bajo
+FinAlgoritmo
+

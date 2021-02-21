@@ -1,0 +1,52 @@
+SET SERVEROUTPUT ON;
+
+-- 1.-
+
+/*
+DECLARE
+NOMBRE VARCHAR2(20);
+
+BEGIN
+NOMBRE:='&NOMBRE';
+
+DBMS_OUTPUT.PUT_LINE ('Hola '||NOMBRE);
+END;
+*/
+
+-- 2.-
+
+/*
+DECLARE
+NUM1 INT;
+NUM2 INT;
+
+BEGIN
+NUM1:=&NUM1;
+NUM2:=&NUM2;
+DBMS_OUTPUT.PUT_LINE ('SUMA: '||(NUM1+NUM2)||' RESTA '||(NUM1-NUM2)||' MULTIPLICACION '||NUM1*NUM2||' DIVISION '||NUM1/NUM2);
+END;
+*/
+
+-- 3.-
+
+/*
+DECLARE
+NUM1 INT;
+NUM2 INT;
+NUM3 INT:=10;
+
+BEGIN
+NUM1:=&NUM1;
+NUM2:=&NUM2;
+DBMS_OUTPUT.PUT_LINE ('Exponente elevado: '||((NUM1**NUM2)*NUM3));
+END;
+*/
+
+-- 4.-
+-- mostrar la fecha actual
+DECLARE
+      fecha Date;
+BEGIN
+     SELECT TO_CHAR(SYSDATE) INTO fecha FROM dual;
+     DBMS_OUTPUT.PUT_LINE('Hoy es '||fecha);
+END;

@@ -1,0 +1,83 @@
+body {
+    margin:0px;
+}
+
+.ofertas{
+    height: 40px;
+    width: 100%;
+    background-color:black;
+    display: flex;
+    justify-content: center;    
+}
+
+.ofertas p {
+    color: white;
+    margin: 12px 100px 0px 10px;
+    float: left;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.ofertas p::first-letter{
+    font-size: 14px;
+}
+
+.ofertas .fas {
+    margin-top: 12px;
+    color:white;
+    float: left;
+}
+.ofertas .fa-truck {
+    margin-left: 100px;
+}
+
+.MenuPrincipal {
+    width: 100%;
+    display: flex;
+    padding: 50px 0px;
+    justify-content: center;
+    margin: auto;
+}
+
+.IkeaLogo {
+    width: 100px;
+    height: 40px;
+    margin: 0px 40px;
+}
+
+.inputDiv{
+    display:flex;
+    border-radius: 25px;
+    background-color: rgb(236, 233, 233);
+    width: 1150px;
+    height: 40px;
+    margin-right: 30px;
+}
+
+input[type = text] {
+    border: none;
+    flex-grow: 1;
+    background-color: rgb(236, 233, 233);
+}
+
+input[type = text]:focus {
+    border: none;
+}
+
+.fa-search, .fa-camera {
+    margin: 12px;
+}
+
+.circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+    margin: 0px 10px;
+}
+.circle:hover{
+    background-color: rgb(236, 233, 233) ;
+}
+
+.circle .fas {
+    margin: 12px
+}

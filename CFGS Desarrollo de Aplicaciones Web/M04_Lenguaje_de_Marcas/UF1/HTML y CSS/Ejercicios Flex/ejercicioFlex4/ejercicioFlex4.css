@@ -1,0 +1,18 @@
+.main_container { display: flex; }
+
+.left_box, .right_box { background: yellow; flex-grow: 1; width: 10%; }
+
+.container1_flex { display: flex; border: 10px solid black; height: 350px; flex-grow: 4; }
+
+.box { padding: 10px 10px 0px 10px; align-self: flex-end; text-align: center; flex-grow: 1; }
+
+.box1 { background:#1abc9c; height: 5%; }
+.box2 { background:#3498db; height: 10%; }
+.box3 { background:#9b59b6; height: 15%; }
+.box4 { background:#34495e; height: 20%; }
+.box5 { background:#f1c40f; height: 25%; }
+.box6 { background:#e67e22; height: 30%; }
+.box7 { background:#e74c3c; height: 35%; }
+.box8 { background:#bdc3c7; height: 40%; }
+.box9 { background:#2ecc71; height: 45%; }
+.box10 { background:#16a085; height: 50%; }

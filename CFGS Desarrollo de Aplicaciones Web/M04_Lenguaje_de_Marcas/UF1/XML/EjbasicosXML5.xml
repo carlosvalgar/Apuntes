@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<platos>
+    <plato>
+        <nombre>Gofres Belgas</nombre>
+        <descripcion>Dos de nuestros famosos Gofres belgas con abundate sirope</descripcion>
+        <precio moneda = "euro">5.95</precio>
+        <calorias>650</calorias>
+    </plato>
+    <plato>
+        <nombre>Gofres Belgas con fresas</nombre>
+        <descripcion>Ligeros gofres belgas cubiertos de fresas y nata montada</descripcion>
+        <precio moneda = "euro">7.95</precio>
+        <calorias>900</calorias>
+    </plato>
+    <plato>
+        <nombre>Gofres Belgas con frutas del bosque</nombre>
+        <descripcion>Ligeros gofres belgas cubiertos con frutas del bosque y nata montada</descripcion>
+        <precio moneda = "euro">8.95</precio>
+        <calorias>900</calorias>
+    </plato>
+    <plato>
+        <nombre>Tostada Francesa</nombre>
+        <descripcion>Dos gruesas rebanadas de nuestro pan francés casero</descripcion>
+        <precio moneda = "euro">4.50</precio>
+        <calorias>600</calorias>
+    </plato>
+    <plato>
+        <nombre>Desayuno de la casa</nombre>
+        <descripcion>Dos huevos, bacon o salchicha, tostada y patatas fritas</descripcion>
+        <precio moneda = "euro">6.95</precio>
+        <calorias>950</calorias>
+    </plato>
+</platos>

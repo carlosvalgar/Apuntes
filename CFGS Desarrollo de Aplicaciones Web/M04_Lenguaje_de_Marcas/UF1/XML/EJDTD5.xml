@@ -1,0 +1,43 @@
+<!-- Dado este DTD genera un documento XML que lo valide y que represente todas las opciones disponibles: -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE carta_desayunos[
+        <!ELEMENT carta_desayunos (desayuno*)>
+        <!ELEMENT desayuno ((nombre, precio, descripcion?, calorias, cafe_incluido?) | (nombre))>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT descripcion (#PCDATA)>
+        <!ELEMENT calorias (#PCDATA)>
+        <!ELEMENT precio (#PCDATA)>
+        <!ELEMENT cafe_incluido EMPTY> 
+]>
+
+<carta_desayunos>
+    <desayuno>
+        <nombre></nombre>   
+    </desayuno>
+    <desayuno>
+        <nombre></nombre>
+        <precio></precio>
+        <descripcion></descripcion>
+        <calorias></calorias>
+        <cafe_incluido/>
+    </desayuno>
+    <desayuno>
+        <nombre></nombre>
+        <precio></precio>
+        <calorias></calorias>
+    </desayuno>
+</carta_desayunos>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE carta_desayunos[
+        <!ELEMENT carta_desayunos (desayuno*)>
+        <!ELEMENT desayuno ((nombre, precio, descripcion?, calorias, cafe_incluido?) | (nombre))>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT descripcion (#PCDATA)>
+        <!ELEMENT calorias (#PCDATA)>
+        <!ELEMENT precio (#PCDATA)>
+        <!ELEMENT cafe_incluido EMPTY> 
+]>
+
+<carta_desayunos>
+</carta_desayunos>

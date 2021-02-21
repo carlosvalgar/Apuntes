@@ -1,0 +1,7 @@
+ALTER TABLE ciudades
+ALTER pais SET DEFAULT("ESP");
+
+INSERT INTO ciudades(nombre, distrito, poblacion)
+VALUES("Prueba", "Prueba", 123456);
+
+SELECT * FROM ciudades WHERE nombre = "Prueba";

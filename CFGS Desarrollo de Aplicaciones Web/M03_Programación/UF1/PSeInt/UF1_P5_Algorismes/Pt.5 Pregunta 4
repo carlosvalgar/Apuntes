@@ -1,0 +1,16 @@
+Algoritmo Contraseña
+	pass <- "PSDraw"
+	usuario <- "nose"
+	c <- 3
+	Repetir
+		Escribir "Introduce la contrseña, tienes ",c," intentos:"
+		Leer usuario
+		c <- c-1
+	Hasta Que pass=usuario o c=0
+	Si C!=0 Entonces
+		Escribir "Has entrado!"
+	SiNo
+		Escribir "Te quedas fuera."
+	FinSi
+FinAlgoritmo
+

@@ -1,0 +1,17 @@
+Algoritmo alumno_mult
+	Escribir "Introduce 2 números enteros:"
+	Escribir "Primer número:"
+	Leer num1
+	Escribir "Segundo número:"
+	Leer num2
+	Escribir "¿Cuánto es ",num1," x ",num2,"?"
+	res <- num1*num2
+	Leer alumno
+	Mientras alumno!=res Hacer
+		Escribir "Te has equivocado, vuelve a intentarlo!"
+		Escribir "¿Cuánto es ",num1," x ",num2,"?"
+		Leer alumno
+	FinMientras
+	Escribir "Has acertado!"
+FinAlgoritmo
+

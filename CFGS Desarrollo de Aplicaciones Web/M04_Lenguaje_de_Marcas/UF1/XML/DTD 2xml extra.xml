@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE calendari SYSTEM "DTD 2dtd extra.xml">
+
+<calendari>
+    <mes nom = "Gener">
+        <dia>
+            <numero>1</numero>
+            <nom>Dilluns</nom>
+        </dia>
+        <dia>
+            <numero>2</numero>
+            <nom>Dimarts</nom>
+        </dia>
+        <dia>
+            <numero>3</numero>
+            <nom>Dimecres</nom>
+        </dia>
+        <dia>
+            <numero>4</numero>
+            <nom>Dijous</nom>
+        </dia>
+        <dia>
+            <numero>5</numero>
+            <nom>Divendres</nom>
+        </dia>
+    </mes>
+    <mes nom = "Febrer">
+        <dia>
+            <numero>1</numero>
+            <nom>Dilluns</nom>
+        </dia>
+        <dia>
+            <numero>2</numero>
+            <nom>Dimarts</nom>
+        </dia>
+        <dia>
+            <numero>3</numero>
+            <nom>Dimecres</nom>
+        </dia>
+        <dia>
+            <numero>4</numero>
+            <nom>Dijous</nom>
+        </dia>
+        <dia>
+            <numero>5</numero>
+            <nom>Divendres</nom>
+        </dia>
+    </mes>
+</calendari>

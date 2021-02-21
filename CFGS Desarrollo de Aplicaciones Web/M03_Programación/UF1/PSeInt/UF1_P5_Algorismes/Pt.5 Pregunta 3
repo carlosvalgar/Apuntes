@@ -1,0 +1,18 @@
+Algoritmo Notas
+	c <- 0
+	med <- 0
+	nota <- 0
+	seguir <- "si"
+	sum <- 0
+	Mientras seguir="si" Hacer
+		Escribir "Introduce la nota:"
+		Leer nota
+		sum <- sum+nota
+		c <- c+1
+		Escribir "¿Quieres seguir introduciendo notas?"
+		Leer seguir
+	FinMientras
+	med <- sum/c
+	Escribir "La media de tus notas es: ",med,"."
+FinAlgoritmo
+

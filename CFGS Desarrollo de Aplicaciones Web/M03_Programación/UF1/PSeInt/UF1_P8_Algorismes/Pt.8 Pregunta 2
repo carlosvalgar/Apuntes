@@ -1,0 +1,23 @@
+Algoritmo Dibujo
+	Escribir 'Escribe el tamaño del segmento:'
+	Leer gran
+	Escribir 'Escribe el número de segmentos:'
+	Leer num
+	Mientras gran<=0 o num<=0 Hacer
+		Escribir "Error has introducido un número negativo o cero"
+		Escribir "Escribe el tamaño del segmento:"
+		Leer gran
+		Escribir "Escribe el número de segmentos:"
+		Leer num
+	FinMientras
+	Para i<-1 Hasta num Hacer
+		Para j<-1 Hasta gran Hacer
+			Escribir "*"sin saltar
+		FinPara
+		Para j<-1 Hasta gran Hacer
+			Escribir " "sin saltar
+		FinPara
+	FinPara
+	Escribir " "
+FinAlgoritmo
+
