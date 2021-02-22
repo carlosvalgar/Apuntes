@@ -1,5 +1,6 @@
 import random
 import math
+import os
 
 argus = {"nombre": "argus", "clase":"guerrero", "nivel": 1, "expAct": 0, "expNext": 20, "pgAct":20, "pgMax": 20, "pmAct": 5, "pmMax": 5, "fuerza": 4, "destreza": 2, "inteligencia": 1, "armaEquipada": {"gladius":{"ataque": 5, "critico": 5}}}
 
@@ -118,4 +119,7 @@ def combate(argus, monstruo):
         argus["pgAct"] = argus["pgAct"] - atacarMonstruo(monstruo)
     
 
-combate(argus, goblin)
+with open("slimeArt.txt", "r") as art:
+    artList = art.readlines()
+    for i in artList:
+        print(i)
