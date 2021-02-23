@@ -122,4 +122,4 @@ def combate(argus, monstruo):
 with open("slimeArt.txt", "r") as art:
     artList = art.readlines()
     for i in artList:
-        print(i)
+        print(i, end="")

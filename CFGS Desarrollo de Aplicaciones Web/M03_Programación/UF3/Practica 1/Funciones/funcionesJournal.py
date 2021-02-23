@@ -6,6 +6,15 @@ dispatcher = {"int": int, "str": str, "float": float}
 
 # Base de los ejercicios
 
+def newNumCli():
+    while True:
+        try:
+            newID = int(input("Insert a number for the new user's ID:\n    > "))
+            return newID
+        
+        except ValueError:
+            print("ERROR: Please, insert an integer.")
+
 def recuperarDatos():
     try:
         with open(os.path.join("Archivos", "datos.txt"), "r") as datos:
@@ -44,7 +53,6 @@ def recuperarDatos():
     
     except ValueError:
         print("ERROR: The data in your file has different number of data type and data values.")
-
 
 # para acceder al fichero se tiene que poner la ruta en una lista que el programa leerá
 
@@ -100,8 +108,13 @@ def readClientFile(file, client):
     except SyntaxError:
         print("ERROR: Person with name " + str(client[0]) + " " + str(client[1]) + " " + str(client[2]) + " not found.") 
 
-listaCliente = ["Pepe", "Perez", "Garcia"]
-listaPath = ["Archivos", "datos.txt"]
-print(readClientFile(listaPath, listaCliente))
+# Ejemplos de como hacer funcionar readClientFile
+# listaCliente = ["Pepe", "Perez", "Garcia"]
+# listaPath = ["Archivos", "datos.txt"]
+# print(readClientFile(listaPath, listaCliente))
+# cosa = input("Escribe la ruta de tu archivo separada por espacios.\n    > ")
+# cosa = cosa.split()
+# print(readClientFile(cosa, listaCliente))
 
 
+print(newNumCli())
