@@ -2,7 +2,64 @@ import random
 import math
 import os
 
-argus = {"nombre": "argus", "clase":"guerrero", "nivel": 1, "expAct": 0, "expNext": 20, "pgAct":20, "pgMax": 20, "pmAct": 5, "pmMax": 5, "fuerza": 4, "destreza": 2, "inteligencia": 1, "armaEquipada": {"gladius":{"ataque": 5, "critico": 5}}}
+dictArmas = {
+    "nada" : {"phyAtk": 0, "magAtk": 0, "crit": 1}
+}
+
+dictArmaduras = {
+    "nada" : {"phyDef": 0, "magDef": 0}
+}
+
+personajeBaseStats = {
+    "lvl": 1,
+    "fue": 1, 
+    "con": 1, 
+    "int": 1, 
+    "esp": 1, 
+    "des": 1
+}
+
+personajeEquipamiento = {
+    "arma": "nada", 
+    "armadura": "nada", 
+    "abalorio": "nada"
+}
+
+def personajeCalculoEstadisticas():
+    return {
+        "maxPg": personajeBaseStats["lvl"] * 10,
+        "maxMp": personajeBaseStats["lvl"] * 5,
+        "ini": personajeBaseStats["des"] * 5,
+        "phyAtk": personajeBaseStats["fue"] + dictArmas[personajeEquipamiento["arma"]]["phyAtk"],
+        "phyDef": personajeBaseStats["con"],
+        "magAtk": personajeBaseStats["int"] + dictArmas[personajeEquipamiento["arma"]]["magAtk"],
+        "magDef": personajeBaseStats["esp"]
+    }
+
+personajeEstadisticas = personajeCalculoEstadisticas()
+
+personajeEstadisticasExtra = {
+    "nombre": "Personaje",
+    "clase": "Guerrero",
+    "expAct": 0,
+    "expNext": 20
+}
+
+def personajeLvlUp():
+    personajeBaseStats["lvl"] = personajeBaseStats["lvl"] + 1
+    personajeBaseStats["fue"] = personajeBaseStats["fue"] + 1
+    personajeBaseStats["con"] = personajeBaseStats["con"] + 1
+    personajeBaseStats["int"] = personajeBaseStats["int"] + 1
+    personajeBaseStats["esp"] = personajeBaseStats["esp"] + 1
+    personajeBaseStats["des"] = personajeBaseStats["des"] + 1
+    
+    global personajeEstadisticas
+    personajeEstadisticas = personajeCalculoEstadisticas()
+
+personajeLvlUp()
+personajeLvlUp()
+
+print(personajeEstadisticas)
 
 slime = {"nombre": "slime", "clase": "limo", "nivel": 1, "pgAct":10, "pgMax": 10, "pmAct": 1, "pmMax": 1, "fuerza": 1, "destreza": 1, "inteligencia": 1, "Experiencia": 20}
 
@@ -108,7 +165,7 @@ def finCombate(argus, monstruo):
         argus["expAct"] = argus["expAct"] + monstruo["Experiencia"]
         estadisticasPersonaje(argus)
         return True
-    
+
 def combate(argus, monstruo):
     while True:
         if finCombate(argus, monstruo) == True:
@@ -117,9 +174,3 @@ def combate(argus, monstruo):
         if finCombate(argus,monstruo) == True:
             return
         argus["pgAct"] = argus["pgAct"] - atacarMonstruo(monstruo)
-    
-
-with open("slimeArt.txt", "r") as art:
-    artList = art.readlines()
-    for i in artList:
-        print(i, end="")
