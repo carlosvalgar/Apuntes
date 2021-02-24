@@ -4,18 +4,6 @@ import itertools
 # Creamos este diccionario para poder pasar las variables a su tipo
 dispatcher = {"int": int, "str": str, "float": float}
 dictionaryKeys = ["id", "name", "firstLastname", "secondLastname", "direction", "postalCode", "population", "province"]
-# Base de los ejercicios
-
-# Usaremos esta funcion para añadir el número de cliente
-
-def newNumCli():
-    while True:
-        try:
-            newID = int(input("Insert a number for the new user's ID:\n    > "))
-            return newID
-        
-        except ValueError:
-            print("ERROR: Please, insert an integer.")
 
 # Usaremos esta funcion para añadir id, nom, cognom1, cognom2, direccio  poblacio i provincia
 
@@ -120,6 +108,8 @@ def newClientData(dataType = ""):
     else:
         print("\nERROR: Wrong value, try id, name, lastname, direction, postal code, population or province.\n")
 
+# Esta funcion nos devuelve un cliente nuevo que hayamos definido
+
 def newClient():
     varNewClient = {"id":newClientData("id"), "name":newClientData("name"), "firstLastname":newClientData("first lastname"), "secondLastname":newClientData("second lastname"), "direction":newClientData("direction"),"postalCode":newClientData("postal code"),"population":newClientData("population"),"province":newClientData("province")}
     
@@ -141,6 +131,8 @@ def newClient():
                 
         except ValueError:
             print("ERROR: Insert a value of 1 or 2.")
+
+# Esta funcion nos devuelve la una lista de diccionarios con todos los clientes
 
 def recoverData(file):
     try:
@@ -185,7 +177,7 @@ def recoverData(file):
     except ValueError:
         print("ERROR: The data in your file has different number of data type and data values.")
 
-# para acceder al fichero se tiene que poner la ruta en una lista que el programa leerá
+# Esta funcion nos devuelve (si existe) el cliente con nombre y apellidos mencionados
 
 def readClientFile(file, client):
     try:
@@ -216,12 +208,12 @@ def readClientFile(file, client):
                     raise ValueError
                 
                 # Iteramos sobre las dos listas a la vez para crear una con los valores correspondientes
-                varCliente = []
-                for (i, j) in zip(varClienteType, varClienteValue):
-                    varCliente.append(dispatcher[i](j))
+                varCliente = {}
+                for (i, j, k) in zip(varClienteType, varClienteValue, dictionaryKeys):
+                    varCliente[k] = dispatcher[i](j)
                 
-                # Añadimos a la lista
-                if client[0] == varCliente[1] and client[1] == varCliente[2] and client[2] == varCliente[3]:
+                # Añadimos a la lista si cumple con los requisitos
+                if client[0] == varCliente["name"] and client[1] == varCliente["firstLastname"] and client[2] == varCliente["secondLastname"]:
                     listaClientes.append(varCliente)
             
             # Miramos si la longitud de la lista es 0, si lo es saltamos un error porque la lista esta vacia
@@ -239,13 +231,23 @@ def readClientFile(file, client):
     except SyntaxError:
         print("ERROR: Person with name " + str(client[0]) + " " + str(client[1]) + " " + str(client[2]) + " not found.") 
 
-# Ejemplos de como hacer funcionar readClientFile
-# listaCliente = ["Pepe", "Perez", "Garcia"]
-# listaPath = ["Archivos", "datos.txt"]
-# print(readClientFile(listaPath, listaCliente))
-# cosa = input("Escribe la ruta de tu archivo separada por espacios.\n    > ")
-# cosa = cosa.split()
-# print(readClientFile(cosa, listaCliente))
+# Al introducir nuestra lista de diccionarios la devolvera ordenada
 
+def sortClientsById(listClient):
+    try:
+        return sorted(listClient, key = lambda x: x["id"])
+    
+    except TypeError:
+        print("ERROR: Try passing a valid client dictionary.")
 
-print(recoverData(["Archivos", "datos.txt"]))
+# Ejemplo de como hacer funcionar readClientFile
+    # listaCliente = ["Pepe", "Perez", "Garcia"]
+    # listaPath = ["Archivos", "datos.txt"]
+    # print(readClientFile(listaPath, listaCliente))
+
+# Ejemplo de como hacer funcionar recoverData
+    # print(recoverData(["Archivos", "datos.txt"]))
+
+# Ejemplo de como hacer funcionar sortClientsById
+    #print(sortClientsById(recoverData(["Archivos", "datos.txt"])))
+
