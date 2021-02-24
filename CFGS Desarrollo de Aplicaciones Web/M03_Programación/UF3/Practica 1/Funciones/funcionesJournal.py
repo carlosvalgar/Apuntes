@@ -3,8 +3,10 @@ import itertools
 
 # Creamos este diccionario para poder pasar las variables a su tipo
 dispatcher = {"int": int, "str": str, "float": float}
-
+dictionaryKeys = ["id", "name", "firstLastname", "secondLastname", "direction", "postalCode", "population", "province"]
 # Base de los ejercicios
+
+# Usaremos esta funcion para añadir el número de cliente
 
 def newNumCli():
     while True:
@@ -15,9 +17,138 @@ def newNumCli():
         except ValueError:
             print("ERROR: Please, insert an integer.")
 
-def recuperarDatos():
+# Usaremos esta funcion para añadir id, nom, cognom1, cognom2, direccio  poblacio i provincia
+
+def newClientData(dataType = ""):
+    if dataType.lower() == "id": 
+        while True:
+            try:
+                newInt = int(input("\nInsert a number for the new user's ID:\n    > "))
+                return newInt
+            
+            except ValueError:
+                print("\nERROR: Please, insert an integer.")
+    
+    elif dataType.lower() == "name":
+        while True:
+            try:
+                newString = input("\nInsert a name for the new user's name:\n    > ")
+                
+                if newString.isalpha() == False:
+                    raise ValueError
+                
+                return newString
+            
+            except ValueError:
+                print("\nERROR: Insert a name with only letters.")
+    
+    elif dataType.lower() == "first lastname":
+        while True:
+            try:
+                newString = input("\nInsert a first lastname for the new user's first lastname:\n    > ")
+                
+                if newString.isalpha() == False:
+                    raise ValueError
+                
+                return newString
+            
+            except ValueError:
+                print("\nERROR: Insert a lastname with only letters.")
+    
+    elif dataType.lower() == "second lastname":
+        while True:
+            try:
+                newString = input("\nInsert a second lastname for the new user's second lastname:\n    > ")
+                
+                if newString.isalpha() == False:
+                    raise ValueError
+                
+                return newString
+            
+            except ValueError:
+                print("\nERROR: Insert a lastname with only letters.")
+    
+    elif dataType.lower() == "direction":
+        while True:
+            try:
+                newString = input("\nInsert a direction for the new user's direction:\n    > ")
+                
+                return newString
+            
+            except ValueError:
+                print("\nERROR: Unexpected error.")
+    
+    elif dataType.lower() == "postal code":
+        while True:
+            try:
+                newString = input("\nInsert a postal code for the new user's postal code:\n    > ")
+                
+                if newString.isdigit() == False:
+                    raise ValueError
+                
+                return newString
+            
+            except ValueError:
+                print("\nERROR: Insert a postal code with only numbers.")
+    
+    elif dataType.lower() == "population":
+        while True:
+            try:
+                newString = input("\nInsert a population for the new user's population:\n    > ")
+                
+                if newString.isalpha() == False:
+                    raise ValueError
+                
+                return newString
+            
+            except ValueError:
+                print("\nERROR: Insert a population with only letters.")
+    
+    elif dataType.lower() == "province":
+        while True:
+            try:
+                newString = input("\nInsert a province for the new user's province:\n    > ")
+                
+                if newString.isalpha() == False:
+                    raise ValueError
+                
+                return newString
+            
+            except ValueError:
+                print("\nERROR: Insert a province with only letters.")
+    
+    else:
+        print("\nERROR: Wrong value, try id, name, lastname, direction, postal code, population or province.\n")
+
+def newClient():
+    varNewClient = {"id":newClientData("id"), "name":newClientData("name"), "firstLastname":newClientData("first lastname"), "secondLastname":newClientData("second lastname"), "direction":newClientData("direction"),"postalCode":newClientData("postal code"),"population":newClientData("population"),"province":newClientData("province")}
+    
+    print("Insert client:" + "\n    ID: " + str(varNewClient["id"]) + "\n    Name: " + str(varNewClient["name"]) + "\n    First lastname: " + str(varNewClient["firstLastname"]) + "\n    Second lastname: " + str(varNewClient["secondLastname"]) + "\n    Direction: " + str(varNewClient["direction"]) + "\n    Postal code: " + str(varNewClient["postalCode"]) + "\n    Population: " + str(varNewClient["population"]) + "\n    Province: " + str(varNewClient["province"]))
+    
+    flagPrint = False
+    while not flagPrint:
+        try:
+            option = int(input("\n1.- Yes\n2.- No\n    > "))
+            
+            if option < 1 or option > 2:
+                raise ValueError
+            
+            if option == 1:
+                return varNewClient
+            
+            elif option == 2:
+                return None
+                
+        except ValueError:
+            print("ERROR: Insert a value of 1 or 2.")
+
+def recoverData(file):
     try:
-        with open(os.path.join("Archivos", "datos.txt"), "r") as datos:
+        path = ""
+        for i in file:
+            path = os.path.join(path, i)
+            
+        with open(path, "r") as datos:
             clientes = datos.readlines()
             listaClientes = []
             # Vamos a usar un bucle para tratar los datos y convertirlos a algo que podamos trabajar
@@ -36,13 +167,13 @@ def recuperarDatos():
                         varClienteValue.append(i)
                         
                 # Comprobamos que las dos listas sean iguales
-                if len(varClienteType) != len(varClienteValue):
+                if len(varClienteType) != len(varClienteValue) and len(varClienteType) != len(dictionaryKeys):
                     raise ValueError
                 
                 # Iteramos sobre las dos listas a la vez para crear una con los valores correspondientes
-                varCliente = []
-                for (i, j) in zip(varClienteType, varClienteValue):
-                    varCliente.append(dispatcher[i](j))
+                varCliente = {}
+                for (i, j, k) in zip(varClienteType, varClienteValue, dictionaryKeys):
+                    varCliente[k] = dispatcher[i](j)
                 
                 # Añadimos a la lista
                 listaClientes.append(varCliente)
@@ -117,4 +248,4 @@ def readClientFile(file, client):
 # print(readClientFile(cosa, listaCliente))
 
 
-print(newNumCli())
+print(recoverData(["Archivos", "datos.txt"]))
