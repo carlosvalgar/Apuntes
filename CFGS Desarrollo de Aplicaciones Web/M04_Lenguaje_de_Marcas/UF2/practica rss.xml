@@ -1,0 +1,52 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<rss version = "2.0">
+    <channel>
+        <title>ejemplo</title>
+        <link>https://www.cabroworld.com</link>
+        <description></description>
+        <language>es</language>
+        <pubDate>Thu, 25 Feb 2021 22:30:24 +0000</pubDate>
+        <category>Newspaper</category>
+        <image>
+            <url>https://www.cabroworld.com/wp-content/uploads/2021/02/pablo-una-palabra-bote-2.jpg</url>
+            <title>ejemplo</title>
+            <link>https://www.cabroworld.com</link>
+        </image>
+        <item>
+            <title>adsgg</title>
+            <link>https://www.cabroworld.com/2021/02/26/publico-estalla-contra-pasapalabra-pablo/</link>
+            <description>shdjd</description>
+            <author>agadgag@gmail.com (charlio)</author>
+            <enclosure url = "https://icdn2.digitaltrends.com/image/digitaltrends_es/problemas-apple-watch-feat-440x292-c.jpg" length = "0" type = "image/png" />
+        </item>
+        <item>
+            <title>adsgg</title>
+            <link>https://www.cabroworld.com/2021/02/26/publico-estalla-contra-pasapalabra-pablo/</link>
+            <description>shdjd</description>
+            <author>agadgag@gmail.com (charlio)</author>
+            <enclosure url = "https://icdn2.digitaltrends.com/image/digitaltrends_es/problemas-apple-watch-feat-440x292-c.jpg" length = "0" type = "image/png" />
+        </item>
+        <item>
+            <title>adsgg</title>
+            <link>https://www.cabroworld.com/2021/02/26/publico-estalla-contra-pasapalabra-pablo/</link>
+            <description>shdjd</description>
+            <author>agadgag@gmail.com (charlio)</author>
+            <enclosure url = "https://icdn2.digitaltrends.com/image/digitaltrends_es/problemas-apple-watch-feat-440x292-c.jpg" length = "0" type = "image/png" />
+        </item>
+        <item>
+            <title>adsgg</title>
+            <link>https://www.cabroworld.com/2021/02/26/publico-estalla-contra-pasapalabra-pablo/</link>
+            <description>shdjd</description>
+            <author>agadgag@gmail.com (charlio)</author>
+            <enclosure url = "https://icdn2.digitaltrends.com/image/digitaltrends_es/problemas-apple-watch-feat-440x292-c.jpg" length = "0" type = "image/png" />
+        </item>
+        <item>
+            <title>adsgg</title>
+            <link>https://www.cabroworld.com/2021/02/26/publico-estalla-contra-pasapalabra-pablo/</link>
+            <description>shdjd</description>
+            <author>agadgag@gmail.com (charlio)</author>
+            <enclosure url = "https://icdn2.digitaltrends.com/image/digitaltrends_es/problemas-apple-watch-feat-440x292-c.jpg" length = "0" type = "image/png" />
+        </item>
+    </channel>
+</rss>

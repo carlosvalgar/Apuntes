@@ -3,11 +3,12 @@ import math
 import os
 
 dictArmas = {
-    "nada" : {"phyAtk": 0, "magAtk": 0, "crit": 1}
+    "Nada" : {"phyAtk": 0, "magAtk": 0, "crit": 1},
+    "Espada Corta" :{"phyAtk": 1, "magAtk": 0, "crit": 5}
 }
 
 dictArmaduras = {
-    "nada" : {"phyDef": 0, "magDef": 0}
+    "Nada" : {"phyDef": 0, "magDef": 0}
 }
 
 personajeBaseStats = {
@@ -20,10 +21,12 @@ personajeBaseStats = {
 }
 
 personajeEquipamiento = {
-    "arma": "nada", 
-    "armadura": "nada", 
-    "abalorio": "nada"
+    "arma": "Espada Corta", 
+    "armadura": "Nada", 
+    "abalorio": "Nada"
 }
+
+# Te recalcula las estadisticas del personaje
 
 def personajeCalculoEstadisticas():
     return {
@@ -33,7 +36,8 @@ def personajeCalculoEstadisticas():
         "phyAtk": personajeBaseStats["fue"] + dictArmas[personajeEquipamiento["arma"]]["phyAtk"],
         "phyDef": personajeBaseStats["con"],
         "magAtk": personajeBaseStats["int"] + dictArmas[personajeEquipamiento["arma"]]["magAtk"],
-        "magDef": personajeBaseStats["esp"]
+        "magDef": personajeBaseStats["esp"],
+        "crit": dictArmas[personajeEquipamiento["arma"]]["crit"]
     }
 
 personajeEstadisticas = personajeCalculoEstadisticas()
@@ -44,6 +48,8 @@ personajeEstadisticasExtra = {
     "expAct": 0,
     "expNext": 20
 }
+
+# Sube un nivel al personaje
 
 def personajeLvlUp():
     personajeBaseStats["lvl"] = personajeBaseStats["lvl"] + 1
@@ -61,9 +67,79 @@ personajeLvlUp()
 
 print(personajeEstadisticas)
 
-slime = {"nombre": "slime", "clase": "limo", "nivel": 1, "pgAct":10, "pgMax": 10, "pmAct": 1, "pmMax": 1, "fuerza": 1, "destreza": 1, "inteligencia": 1, "Experiencia": 20}
+# getSlime Genera un slime de nivel que le indiques
 
-goblin = {"nombre": "goblin", "clase": "humanoide", "nivel": 2, "pgAct":25, "pgMax": 20, "pmAct": 5, "pmMax": 5, "fuerza": 2, "destreza": 2, "inteligencia": 1, "Experiencia": 20}
+def getSlime(nvl):
+    try:
+        baseStatsSlime = {
+            "nvl": nvl,
+            "fue": int(1 + 1 / 3 * nvl),
+            "con": int(1 + 1 / 2 * nvl),
+            "int": int(1 + 1 / 2 * nvl),
+            "esp": int(1 + 1 * nvl),
+            "des": int(1 + 1 / 4 * nvl)
+        }
+        
+        
+        return {
+        "nombre": "Slime", 
+        "clase": "Limo", 
+        "nvl": baseStatsSlime["nvl"], 
+        "pgMax": baseStatsSlime["nvl"] * 5, 
+        "pmMax": baseStatsSlime["nvl"] * 1,
+        "ini": baseStatsSlime["des"] * 5,
+        "phyAtk": baseStatsSlime["fue"] + dictArmas["Nada"]["phyAtk"],
+        "phyDef": baseStatsSlime["con"] + dictArmaduras["Nada"]["phyDef"],
+        "magAtk": baseStatsSlime["int"] + dictArmas["Nada"]["magAtk"],
+        "magDef": baseStatsSlime["esp"] + dictArmaduras["Nada"]["magDef"],
+        "crit": dictArmas["Nada"]["crit"],
+        "fue": baseStatsSlime["fue"],
+        "con": baseStatsSlime["con"], 
+        "int": baseStatsSlime["int"],
+        "esp": baseStatsSlime["esp"],
+        "des": baseStatsSlime["des"],
+        "Experiencia": 20}
+        
+    except TypeError:
+        print("ERROR: Pasa un entero a la función getSlime.")
+
+# getSlime Genera un goblin de nivel que le indiques
+
+def getGoblin(nvl):
+    try:
+        baseStatsGoblin = {
+            "nvl": nvl,
+            "fue": int(1 + 1 / 2 * nvl),
+            "con": int(1 + 1 / 3 * nvl),
+            "int": int(1 + 1 / 4 * nvl),
+            "esp": int(1 + 1 / 4* nvl),
+            "des": int(1 + 1 / 2 * nvl)
+        }
+        
+        
+        return {
+        "nombre": "Goblin", 
+        "clase": "Humanoide", 
+        "nvl": baseStatsGoblin["nvl"], 
+        "pgMax": baseStatsGoblin["nvl"] * 6, 
+        "pmMax": baseStatsGoblin["nvl"] * 2,
+        "ini": baseStatsGoblin["des"] * 5,
+        "phyAtk": baseStatsGoblin["fue"] + dictArmas["Espada Corta"]["phyAtk"],
+        "phyDef": baseStatsGoblin["con"] + dictArmaduras["Nada"]["phyDef"],
+        "magAtk": baseStatsGoblin["int"] + dictArmas["Nada"]["magAtk"],
+        "magDef": baseStatsGoblin["esp"] + dictArmaduras["Nada"]["magDef"],
+        "crit": dictArmas["Espada Corta"]["crit"],
+        "fue": baseStatsGoblin["fue"],
+        "con": baseStatsGoblin["con"], 
+        "int": baseStatsGoblin["int"],
+        "esp": baseStatsGoblin["esp"],
+        "des": baseStatsGoblin["des"],
+        "Experiencia": 30}
+        
+    except TypeError:
+        print("ERROR: Pasa un entero a la función getGoblin.")
+
+
 
 def turnoPersonaje(argus, monstruo):
     print("1.- Atacar\n2.- Pasar")
@@ -75,17 +151,14 @@ def turnoPersonaje(argus, monstruo):
         return
 
 def atacarPersonaje(personaje):
-    for x in personaje["armaEquipada"].keys():
-        arma = x
-        
     golpeCritico = random.randint(1, 100)
     
-    if golpeCritico > personaje["armaEquipada"][arma]["critico"]:
-        return math.trunc(personaje["fuerza"] + personaje["armaEquipada"][arma]["ataque"] * (random.randint(75, 100)/100))
+    if golpeCritico > personaje["crit"]:
+        return math.trunc(personaje["phyAtk"] * (random.randint(50, 125)/100))
     
     else:
         print("¡GOLPE CRÍTCO!")
-        return math.trunc(personaje["fuerza"] + personaje["armaEquipada"][arma]["ataque"] * (random.randint(75, 100)/100)) * 2
+        return math.trunc(personaje["phyAtk"] * (random.randint(50, 125)/100)) * 2
 
 def atacarMonstruo(monstruo):
     if monstruo["nombre"] == "slime":
@@ -174,3 +247,5 @@ def combate(argus, monstruo):
         if finCombate(argus,monstruo) == True:
             return
         argus["pgAct"] = argus["pgAct"] - atacarMonstruo(monstruo)
+
+print(atacarPersonaje(personajeEstadisticas))
