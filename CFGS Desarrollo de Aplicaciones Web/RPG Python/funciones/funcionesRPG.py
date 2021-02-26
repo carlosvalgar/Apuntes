@@ -98,7 +98,7 @@ def getSlime(nvl):
         "int": baseStatsSlime["int"],
         "esp": baseStatsSlime["esp"],
         "des": baseStatsSlime["des"],
-        "Experiencia": 20}
+        "Experiencia": int(20 * (0.5 + nvl / 2))}
         
     except TypeError:
         print("ERROR: Pasa un entero a la función getSlime.")
@@ -126,7 +126,7 @@ def getGoblin(nvl):
         "ini": baseStatsGoblin["des"] * 5,
         "phyAtk": baseStatsGoblin["fue"] + dictArmas["Espada Corta"]["phyAtk"],
         "phyDef": baseStatsGoblin["con"] + dictArmaduras["Nada"]["phyDef"],
-        "magAtk": baseStatsGoblin["int"] + dictArmas["Nada"]["magAtk"],
+        "magAtk": baseStatsGoblin["int"] + dictArmas["Espada Corta"]["magAtk"],
         "magDef": baseStatsGoblin["esp"] + dictArmaduras["Nada"]["magDef"],
         "crit": dictArmas["Espada Corta"]["crit"],
         "fue": baseStatsGoblin["fue"],
@@ -134,12 +134,10 @@ def getGoblin(nvl):
         "int": baseStatsGoblin["int"],
         "esp": baseStatsGoblin["esp"],
         "des": baseStatsGoblin["des"],
-        "Experiencia": 30}
+        "Experiencia": int(30 * (0.5 + nvl / 2))}
         
     except TypeError:
         print("ERROR: Pasa un entero a la función getGoblin.")
-
-
 
 def turnoPersonaje(argus, monstruo):
     print("1.- Atacar\n2.- Pasar")
