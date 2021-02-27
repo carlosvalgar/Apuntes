@@ -161,11 +161,15 @@ def sortCaraDura(caradura):
 # Esta funcion te genera Caradura.txt donde estaran guardados todos los clientes ordenados por nombre de compañia
 
 def saveCaraDura(caraduraList):
-    with open(os.path.join("files", "Caradura.txt"), "w") as caradura:
-        print("Generating Caradura.txt")
-        for client in caraduraList:
-            caradura.write(str(client["id"]) + "#" + str(client["nomCompania"]) + "#" + str(client["direccio"]) + "#" + str(client["ciutat"]) + "\n")
-
+    try:
+        with open(os.path.join("files", "Caradura.txt"), "w") as caradura:
+            print("Saving Caradura.txt")
+            for client in caraduraList:
+                caradura.write(str(client["id"]) + "#" + str(client["nomCompania"]) + "#" + str(client["direccio"]) + "#" + str(client["ciutat"]) + "\n")
+                
+    except FileNotFoundError:
+        print("ERROR: Directory files doesn't exist.")
+        
 # Ejemplo de uso
 
 archivosBaseExist()
