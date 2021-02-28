@@ -32,7 +32,7 @@ def turnoPersonaje(monstruo):
             flagSkills = False
             
             while not flagSkills:
-                optionSkill = menu.menuPersonaje(menu.menuHabilidadesCombate, monstruo, "Habilidades", 19)
+                optionSkill = menu.menuPersonaje(menu.menuHabilidadesCombate, monstruo, "Habilidades", 59)
                 
                 if optionSkill == 1 and pj.personajeEstadisticas["pmAct"]>= 2:
                     pjskll.corteRapido(pj.personajeEstadisticas, monstruo)

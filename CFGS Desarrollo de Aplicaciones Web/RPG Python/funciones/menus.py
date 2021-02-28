@@ -3,10 +3,14 @@ from termcolor import colored
 
 # Printa las barras de vida y mana con formato
 
-def barrasVidaMana():
+def barrasVidaMana(longitud):
     lenBarrasVidaMana = "| PG: " + str(pj.personajeEstadisticas["pgAct"]) + " / " + str(pj.personajeEstadisticas["pgMax"]) + " | " + "PM: " + str(pj.personajeEstadisticas["pmAct"]) + " / " + str(pj.personajeEstadisticas["pmMax"]) + " |"
-            
-    print("-" * len(lenBarrasVidaMana))
+
+    if len(lenBarrasVidaMana) > longitud + 8:
+        print("-" * len(lenBarrasVidaMana))
+        
+    else:
+        print("-" * (longitud + 8))
             
     if pj.personajeEstadisticas["pgAct"] / pj.personajeEstadisticas["pgMax"] == 1:
         print("|" +  colored(" PG", "green") + ": " + colored(str(pj.personajeEstadisticas["pgAct"]), "green") + " / " + colored(str(pj.personajeEstadisticas["pgMax"]), "green") + " | ", end = "")
@@ -66,7 +70,7 @@ def menuPersonaje(lista, monstruo, cabecera = "", longitud = 20):
             for item in lista:
                 print("| " + colored(str(lista.index(item) + 1) + ".- ", color = "cyan", attrs = ["bold"])  + str(item).ljust(len(item) + (longitud - len(item))) + " |")
             
-            barrasVidaMana()
+            barrasVidaMana(longitud)
             
             opcion = int(input("\nElige una acción:\n    > "))
             
@@ -82,7 +86,7 @@ def menuPersonaje(lista, monstruo, cabecera = "", longitud = 20):
 
 def diccionarioHabilidades():
     if pj.personajeBaseStats["lvl"] == 1:
-        menu = ["Corte rápido | 2 PM", "Salir"]
+        menu = ["Corte rápido | 2 PM | Golpe débil que aumenta tu prioridad.", "Salir"]
         return menu
     
     elif pj.personajeBaseStats["lvl"] == 2:

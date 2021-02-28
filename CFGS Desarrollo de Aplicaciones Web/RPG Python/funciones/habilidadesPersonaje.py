@@ -27,7 +27,7 @@ def atacarPersonaje(personaje, monstruo):
         return damage * 2
 
 def corteRapido(personaje, monstruo):
-    golpeCritico = random.randint(1, 100) + 5
+    golpeCritico = random.randint(1, 100)
     damage = math.trunc((personaje["phyAtk"] * (random.randint(25, 75)/100)) - monstruo["phyDef"])
     personaje["prio"] += personaje["ini"] * personaje["lvl"]
     personaje["pmAct"] -= 2
