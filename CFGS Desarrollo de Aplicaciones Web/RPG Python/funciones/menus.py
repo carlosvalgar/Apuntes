@@ -1,4 +1,5 @@
 import personaje as pj
+import objetos as item
 from termcolor import colored
 
 # Printa las barras de vida y mana con formato
@@ -95,5 +96,5 @@ def diccionarioHabilidades():
         return menu
     
 menuPrincipalCombate = ["Atacar", "Defenderse", "Habilidades", "Objetos"]
-
+menuObjetos = ["Pocion", "Salir"]
 menuHabilidadesCombate = diccionarioHabilidades()

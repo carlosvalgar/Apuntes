@@ -2,6 +2,7 @@ import personaje as pj
 import habilidadesPersonaje as pjskll
 import habilidadesMonstruo as mnstrskll
 import menus as menu
+import objetos as item
 import os
 
 clear = lambda: os.system("cls")
@@ -56,7 +57,21 @@ def turnoPersonaje(monstruo):
                     flagSkills = True
                     
         elif option == 4:
-            print("WIP")
+            flagItems = False
+            
+            while not flagItems:
+                optionItem = menu.menuPersonaje(menu.menuObjetos, monstruo, "Objetos", 7)
+                
+                if optionItem == 1 and item.dictObjetos["Pocion"][0] > 0:
+                    item.objetos("Pocion", item.dictObjetos)
+                    flagItems = True
+                    flagEndTurn = True
+                
+                elif optionItem == 1 and item.dictObjetos["Pocion"][0] <= 0:
+                    print("No tienes pociones!")
+                
+                else:
+                    flagItems = True
 
 def gameOver():
     print("Tus PG han llegado a 0, has perdido.")
