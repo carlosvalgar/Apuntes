@@ -28,7 +28,7 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 #         print("Generating directory ./exercicis/Data/operacions")
 #         os.makedirs(os.path.join("exercicis", "Data", "operacions"))
 
-#     with open(os.path.join("exercicis", "Data", "operacions", "pacients.txt"), "a") as pacients:
+#     with open(os.path.join("exercicis", "Data", "operacions", "pacients.txt"), "w") as pacients:
 #         for pacient in dictPacients.items():
 #             for data in pacient:
 #                 pacients.write(str(data) + "#")

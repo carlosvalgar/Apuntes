@@ -67,6 +67,3 @@ def propNomFitxer(nomFitxer):
     
     except FileNotFoundError:
         print("ERROR: L'arxiu " + str(nomFitxer) + " no existeix en la carpeta actual.")
-
-delNomFitxer("1.txt")
-propNomFitxer("1.txt")
