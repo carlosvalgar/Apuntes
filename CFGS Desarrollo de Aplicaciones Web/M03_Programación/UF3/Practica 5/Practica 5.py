@@ -75,12 +75,51 @@ def guardar_diccionario(nombreFichero, diccionario):
             
             elif type(item[1]) == int:
                 archivo.write("value_type=int" + "*" + str(item[1]) + "*")
-                
+            
+            # Si es un diccionario repetimos el codigo principal
             elif type(item[1]) == dict:
                 archivo.write("value_type=dict" + "*")
-                guardar_diccionario(nombreFichero, item[1])
+                
+                for item2 in item[1].items():
+                    if type(item2[0]) == str:
+                        archivo.write("key_type=str" + "*" + str(item2[0]) + "*")
+                        
+                    elif type(item2[0]) == int:
+                        archivo.write("key_type=int" + "*" + str(item2[0]) + "*")
+                    
+                    if type(item2[1]) == str:
+                        archivo.write("value_type=str" + "*" + str(item2[1]) + "*")
+                    
+                    elif type(item2[1]) == int:
+                        archivo.write("value_type=int" + "*" + str(item2[1]) + "*")
+                
+                    elif type(item2[1]) == list:
+                        archivo.write("value_type=list" + "*")
+                        
+                        for i in item2[1]:
+                            if type(i) == str:
+                                archivo.write("value_type=str" + "*" + str(i) + "*")
+
+                            elif type(i) == int:
+                                archivo.write("value_type=int" + "*" + str(i) + "*")
+                        
+                        archivo.write("list*")
+            
+                    elif type(item2[1]) == tuple:
+                        archivo.write("value_type=tuple" + "*")
+                        
+                        for i in item2[1]:
+                            if type(i) == str:
+                                archivo.write("value_type=str" + "*" + str(i) + "*")
+
+                            elif type(i) == int:
+                                archivo.write("value_type=int" + "*" + str(i) + "*")
+                        
+                        archivo.write("tuple*")
+                        
                 archivo.write("dict*")
             
+            # Si es una lista escribimos la lista iterando sobre item[1]
             elif type(item[1]) == list:
                 archivo.write("value_type=list" + "*")
                 
@@ -93,6 +132,7 @@ def guardar_diccionario(nombreFichero, diccionario):
                 
                 archivo.write("list*")
             
+            # Si es una tupla hacemos lo miso que con la lista
             elif type(item[1]) == tuple:
                 archivo.write("value_type=tuple" + "*")
                 
@@ -107,19 +147,133 @@ def guardar_diccionario(nombreFichero, diccionario):
 
 def cargar_diccionario(nombreFichero):
     with open(os.path.join("Archivos", nombreFichero), "r") as archivo:
-        recover = archivo.readlines()[0].split("key_type=")
+        recover = archivo.readlines()[0].split("*")
         if "" in recover:
             recover.remove("")
-            
+        
         print(recover)
-        for i in recover:
-            j = i.split("*value_type=")
-            print(j)
+        
+        dictRecover = {}
+        dictlen = 0
+        for i in range(len(recover)):
+            if dictlen > 0:
+                dictlen -= 1
+                
+            else:
+                if recover[i] == "key_type=int":
+                    key = int(recover[i + 1])
+                    flagKey = False
+                    
+                elif recover[i] == "key_type=str":
+                    key = str(recover[i + 1])
+                    flagKey = False
+                
+                elif not flagKey:
+                    if recover[i] == "value_type=int":
+                        value = int(recover[i + 1])
+                        dictRecover[key] = value
+                        flagKey = True
+                        
+                    elif recover[i] == "value_type=str":
+                        value = str(recover[i + 1])
+                        dictRecover[key] = value
+                        flagKey = True
+                        
+                    elif recover[i] == "value_type=list":
+                        listaRecover = []
+                        flagList = False
+                        
+                        for j in recover[i + 1:]:
+                            if j == "list":
+                                flagList = True
+                                
+                            if not flagList:
+                                if j == "value_type=int":
+                                    value = "int"
+                                    
+                                elif j == "value_type=str":
+                                    value = "str"
+                                    
+                                else:
+                                    if value == "int":
+                                        listaRecover.append(int(j))
+                                        
+                                    elif value == "str":
+                                        listaRecover.append(str(j))
+                                        
+                        value = listaRecover
+                        dictRecover[key] = value
+                        flagKey = True
+                        
+                    elif recover[i] == "value_type=tuple":
+                        tupleRecover = []
+                        flagTuple = False
+                        
+                        for j in recover[i + 1:]:
+                            if j == "tuple":
+                                flagTuple = True
+                                
+                            if not flagTuple:
+                                if j == "value_type=int":
+                                    value = "int"
+                                    
+                                elif j == "value_type=str":
+                                    value = "str"
+                                    
+                                else:
+                                    if value == "int":
+                                        tupleRecover.append(int(j))
+                                        
+                                    elif value == "str":
+                                        tupleRecover.append(str(j))
+                                        
+                        value = tuple(tupleRecover)
+                        dictRecover[key] = value
+                        flagKey = True
+                    
+                    elif recover[i] == "value_type=dict":
+                        listDictRecover = []
+                        dictRecover2 = {}
+                        flagDict = False
+
+                        for j in recover[i + 1:]:
+                            if j == "dict":
+                                flagDict = True
+                            
+                            if not flagDict:
+                                listDictRecover.append(j)
+                                
+                        for j in range(len(listDictRecover)):
+                            if listDictRecover[j] == "key_type=int":
+                                key2 = int(listDictRecover[j + 1])
+                                flagKey2 = False
+                                
+                            elif listDictRecover[j] == "key_type=str":
+                                key2 = str(listDictRecover[j + 1])
+                                flagKey2 = False
+                            
+                            elif not flagKey2:
+                                if listDictRecover[j] == "value_type=int":
+                                    value2 = int(listDictRecover[j + 1])
+                                    dictRecover2[key2] = value2
+                                    flagKey2 = True
+                                    
+                                elif listDictRecover[j] == "value_type=str":
+                                    value2 = str(listDictRecover[j + 1])
+                                    dictRecover2[key2] = value2
+                                    flagKey2 = True
+                                    
+                        dictRecover[key] = dictRecover2
+                        dictlen = len(dictRecover2)*4
+                        flagKey = True
+                    
+        return dictRecover
 
 
-# print(list(compra_client.items()))
-# print(list(compra_article.items()))
-# print(list(dict_clients.items()))
 
-cargar_diccionario("cliente_compra.txt")
-# guardar_diccionario("cliente_compra", cliente_compra)
+
+# guardar_diccionario("dict_clients", dict_clients)
+
+print(cargar_diccionario("dict_clients.txt"))
+
+print(len({1:1, 2:2}))
