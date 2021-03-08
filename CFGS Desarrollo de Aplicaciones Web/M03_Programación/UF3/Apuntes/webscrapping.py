@@ -44,14 +44,16 @@ ligaFemeninaSoup = BeautifulSoup(page, "lxml")
 tabla = ligaFemeninaSoup.find(class_="tabla-estadistica")
 
 tabla = tabla.find("tbody")
+tablaAux = []
 
 for row in tabla.find_all("tr"):
     numCelda = 0
     for column in row.find_all("td"):
         if numCelda == 1:
-            print("Equipo: ", column.text, end = "")
-            
+            tablaAux = column.text.split("\n")
+            tablaAux = [x for x in tablaAux if x]
+            print("Equipo: ",tablaAux[0].ljust(35), end = "")
         elif numCelda == 7:
-            print("Puntos: ", column.text)
+            print(" Puntos: ", column.text)
         
         numCelda += 1
