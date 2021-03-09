@@ -1,0 +1,9 @@
+menu00-Articulos*Compras*Clientes*Salir-MENU PRINCIPAL
+menu01-Listar Articulos*Buscar Articulo por id*Buscar articulo por nombre"*Buscar los 3 artículos mas vendidos*Buscar los tres artículos menos vendidos*Crear nuevo artículo*Modificar articulo*Menu Principal
+menu011-Listar por id*Listar por nombre*Listar por stock*Volver Atras-LISTAR ARTICULOS
+menu017-Nombre*Stock*Precio*Mostrar Articulo*Volver Atras
+menu02-Buscar Compras*Listar Compras*Crear Compra*Menu Principal
+menu022-Listar Todas Las Compras*Listar Compras que contienen cierto artículo
+menu03-Buscar Clientes*Buscar 3 primeros clientes con mayor gasto*Buscar 3 clientes con mayor gasto por fecha*Crear cliente*Menu Principal
+menu031-Buscar por nombre*Buscar por NIF*Volver Atras
+menu0312-Mostrar compras*Mostrar compras detalladas*Volver Atras
