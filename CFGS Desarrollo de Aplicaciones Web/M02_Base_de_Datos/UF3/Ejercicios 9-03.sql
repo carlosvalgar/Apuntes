@@ -54,7 +54,27 @@ MINVALUE 1;
 
 -- 2.6. Escriu un programa PL/SQL que demani a l’usuari la quantitat d’empleats a inserir i insereixi aquesta quantitat de files a la taula empleats
 DECLARE
+v_emp empleats%ROWTYPE;
 
 BEGIN
-DBMS_OUTPUT.PUT_LINE(UPPER(SUBSTR('calca', 1, 1))||SUBSTR('calca', 2, LENGTH('calca')-1));
+FOR i IN 1..&empleats_a_inserir
+    LOOP
+        v_emp.id_emp := sec_ID_empleados.NEXTVAL;
+        
+        v_emp.nom := paraula_aleat(2, 12);
+        v_emp.nom := UPPER(SUBSTR(v_emp.nom, 1, 1))||SUBSTR(v_emp.nom, 2, LENGTH(v_emp.nom) -1);
+        v_emp.cognoms := paraula_aleat(2, 12);
+        v_emp.cognoms := UPPER(SUBSTR(v_emp.cognoms, 1, 1))||SUBSTR(v_emp.cognoms, 2, LENGTH(v_emp.cognoms) -1);
+        v_emp.cognoms := v_emp.cognoms||' '||v_emp.nom;
+        
+        v_emp.nom := paraula_aleat(3, 8);
+        v_emp.nom := UPPER(SUBSTR(v_emp.nom, 1, 1))||SUBSTR(v_emp.nom, 2, LENGTH(v_emp.nom) -1);
+        
+        SELECT TO_DATE(TRUNC(DBMS_RANDOM.VALUE(TO_CHAR(DATE '1990-01-15','J'), TO_CHAR(SYSDATE,'J'))),'J') INTO v_emp.data_contracte FROM DUAL;
+        
+        SELECT TRUNC(DBMS_RANDOM.VALUE(13300, 87459)) INTO v_emp.salari FROM DUAL;
+        
+        INSERT INTO empleats VALUES(v_emp.id_emp, v_emp.nom, v_emp.cognoms, v_emp.data_contracte, v_emp.salari);
+        
+    END LOOP;
 END;
