@@ -1,4 +1,5 @@
 import os
+import operator
 
 # Ponemos la ruta de trabajo donde se encuentra el fichero
 
@@ -48,6 +49,105 @@ def realitzarTrucada(telefono, palabra):
     
 # realitzarTrucada("977456734", "TARRAGONA")
 
+def rebreTrucada(telefono, palabra):
+    with open("telefons.txt", "r") as fichero:
+        listaTelefono = fichero.readlines()
+    
+    flagTelefono = False
+    for item in range(len(listaTelefono)):
+        if telefono in listaTelefono[item] and palabra in listaTelefono[item]:
+            flagTelefono = True
+            lista = listaTelefono[item].split(" ")
+            lista[3] = str(int(lista[3]) + 1) + "\n"
+            listaTelefono[item] = lista[0] + " " + lista[1] + " " + lista[2] + " " + lista[3]
+            
+    if flagTelefono == False:
+        with open("telefons.txt", "a") as fichero:
+            fichero.write(str(telefono) + " " + str(palabra) + " 1 0\n")
+    
+    elif flagTelefono == True:
+        with open("telefons.txt", "w") as fichero:
+            fichero.writelines(listaTelefono)
+
+
+def filtrarTrucades(nomFitxer, prefix):
+    with open(nomFitxer, "r") as fichero:
+        listaTelefono = fichero.readlines()
+    
+    contadorTrucades = 0
+    for item in range(len(listaTelefono)):
+        if prefix == listaTelefono[item][0:3]:
+            lista = listaTelefono[item].split("\n")
+            lista = lista[0].split(" ")
+            if int(lista[3]) > int(lista[2]):
+                contadorTrucades += 1
+        
+    return contadorTrucades
+
+def ciutatMesTrucades(nomFitxer):
+    with open(nomFitxer, "r") as fichero:
+        listaTelefono = fichero.readlines()
+    
+    dictAuxiliar = {}
+    
+    for item in range(len(listaTelefono)):
+        lista = listaTelefono[item].split("\n")
+        lista = lista[0].split(" ")
+        if lista[1] not in dictAuxiliar.keys():
+            dictAuxiliar[lista[1]] = int(lista[3])
+        else:
+            dictAuxiliar[lista[1]] += int(lista[3])
+    
+    return max(dictAuxiliar.items(), key=operator.itemgetter(1))[0]
+
+def ciutatMenysTrucades(nomFitxer):
+    with open(nomFitxer, "r") as fichero:
+        listaTelefono = fichero.readlines()
+    
+    dictAuxiliar = {}
+    
+    for item in range(len(listaTelefono)):
+        lista = listaTelefono[item].split("\n")
+        lista = lista[0].split(" ")
+        if lista[1] not in dictAuxiliar.keys():
+            dictAuxiliar[lista[1]] = int(lista[3])
+        else:
+            dictAuxiliar[lista[1]] += int(lista[3])
+    
+    return min(dictAuxiliar.items(), key=operator.itemgetter(1))[0]
+
+def ciutatMesTruca(nomFitxer):
+    with open(nomFitxer, "r") as fichero:
+        listaTelefono = fichero.readlines()
+    
+    dictAuxiliar = {}
+    
+    for item in range(len(listaTelefono)):
+        lista = listaTelefono[item].split("\n")
+        lista = lista[0].split(" ")
+        if lista[1] not in dictAuxiliar.keys():
+            dictAuxiliar[lista[1]] = int(lista[2])
+        else:
+            dictAuxiliar[lista[1]] += int(lista[2])
+    
+    return max(dictAuxiliar.items(), key=operator.itemgetter(1))[0]
+
+def ciutatMenysTruca(nomFitxer):
+    with open(nomFitxer, "r") as fichero:
+        listaTelefono = fichero.readlines()
+    
+    dictAuxiliar = {}
+    
+    for item in range(len(listaTelefono)):
+        lista = listaTelefono[item].split("\n")
+        lista = lista[0].split(" ")
+        if lista[1] not in dictAuxiliar.keys():
+            dictAuxiliar[lista[1]] = int(lista[2])
+        else:
+            dictAuxiliar[lista[1]] += int(lista[2])
+    
+    return min(dictAuxiliar.items(), key=operator.itemgetter(1))[0]
+
 flagMenu = False
 
 while not flagMenu:
@@ -60,25 +160,29 @@ while not flagMenu:
         realitzarTrucada(str(telefono), localizacion)
         
     elif opcioMenu00 == 2:
-        print("WIP")
+        telefono = int(input("Introduce el número de teléfono:\n    > "))
+        localizacion = input("Introduce la localización:\n    > ").upper()
+        rebreTrucada(str(telefono), localizacion)
         
     elif opcioMenu00 == 3:
-        print("WIP")
+        arxiu = input("Introduce el archivo:\n    > ")
+        prefix = input("Introduce el prefijo:\n   > ")
+        print("Hi ha " + str(filtrarTrucades(arxiu, prefix)) + " trucades amb el prefix " + str(prefix) + " que tenen mes trucades rebudes que fetes.")
         
     elif opcioMenu00 == 4:
         opcioMenu01 = menus(menu01, capcelera01)
         
         if opcioMenu01 == 1:
-            print("WIP")
+            print(ciutatMesTrucades("telefons.txt"))
             
         elif opcioMenu01 == 2:
-            print("WIP")
+            print(ciutatMenysTrucades("telefons.txt"))
             
         elif opcioMenu01 == 3:
-            print("WIP")
+            print(ciutatMesTruca("telefons.txt"))
             
         elif opcioMenu01 == 4:
-            print("WIP")
+            print(ciutatMenysTruca("telefons.txt"))
             
     elif opcioMenu00 == 5:
         flagMenu = True
