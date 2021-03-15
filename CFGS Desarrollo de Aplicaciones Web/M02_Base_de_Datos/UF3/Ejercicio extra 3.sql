@@ -5,10 +5,10 @@ SET SERVEROUTPUT ON;
 CREATE OR REPLACE FUNCTION manager_job_history(codigo_departamento job_history.department_id%TYPE) RETURN NUMBER AS
 varCount NUMBER;
 BEGIN
-    SELECT COUNT(*) INTO varCount FROM job_history WHERE department_id = codigo_departamento;
+    SELECT COUNT(*) INTO varCount FROM job_history WHERE department_id = codigo_departamento AND employee_id IN (SELECT DISTINCT employees.manager_id  FROM employees INNER JOIN job_history ON job_history.employee_id = employees.manager_id);
     RETURN varCount;
 END;
 /
 
-select department_name, manager_job_history(department_id)
-from departments;
+SELECT department_name, manager_job_history(department_id)
+FROM departments;
