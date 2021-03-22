@@ -1,0 +1,16 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Discos master = new Discos(1, "Master", "Motollica", "Uno qualquiera");
+		System.out.println(master.GetCodigo());
+		System.out.println(master.GetTitulo());
+		System.out.println(master.GetAutor());
+		System.out.println(master.GetNomDiscografica());
+		Libros piesBarro = new Libros(1, "Pies de barro", "Torry protchet", 1234);
+		System.out.println(piesBarro.GetCodigo());
+		System.out.println(piesBarro.GetTitulo());
+		System.out.println(piesBarro.GetAutor());
+		System.out.println(piesBarro.GetNumeroPaginas());
+	}
+}

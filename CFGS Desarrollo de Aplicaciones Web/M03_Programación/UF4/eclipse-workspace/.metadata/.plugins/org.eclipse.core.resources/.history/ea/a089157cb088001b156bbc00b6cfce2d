@@ -1,0 +1,12 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Persona pepe = new Persona("Pepe");
+		Persona ana = new Persona("Ana", 25);
+		System.out.println(ana.GetNombre());
+		pepe.cantar();
+
+	}
+
+}

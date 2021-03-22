@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+public class ExerciciVectors {
+
+	public static void main(String[] args) {
+		int numeroDNI;
+		int residuDNI;
+		char lletraDNI;
+		Scanner lector = new Scanner(System.in);
+		numeroDNI = lector.nextInt();
+		residuDNI = numeroDNI % 23;
+		switch(residuDNI) {
+		case 0:
+			lletraDNI = 'T';
+			break;
+		case 1:
+			lletraDNI = 'R';
+			break;
+		case 2:
+			lletraDNI = 'W';
+			break;
+		case 3:
+			lletraDNI = 'A';
+			break;
+		case 4:
+			lletraDNI = 'G';
+			break;
+		case 5:
+			lletraDNI = 'H';
+			break;
+		case 6:
+			lletraDNI = 'Y';
+			break;
+		case 7:
+			lletraDNI = 'F';
+			break;
+		case 8:
+			lletraDNI = 'P';
+			break;
+		case 9:
+			lletraDNI = 'D';
+			break;
+		case 10:
+			lletraDNI = 'X';
+			break;
+		case 11:
+			lletraDNI = 'B';
+			break;
+		case 12:
+			lletraDNI = 'N';
+			break;
+		case 13:
+			lletraDNI = 'J';
+			break;
+		case 14:
+			lletraDNI = 'Z';
+			break;
+		case 15:
+			lletraDNI = 'S';
+			break;
+		case 16:
+			lletraDNI = 'Q';
+			break;
+		case 17:
+			lletraDNI = 'V';
+			break;
+		case 18:
+			lletraDNI = 'H';
+			break;
+		case 19:
+			lletraDNI = 'L';
+			break;
+		case 20:
+			lletraDNI = 'C';
+			break;
+		case 21:
+			lletraDNI = 'K';
+			break;
+		case 22:
+			lletraDNI = 'E';
+			break;
+		default:
+			System.out.println("ERROR: Introduce un DNI válido.");
+		}
+		
+		
+
+	}
+
+}

@@ -1,0 +1,70 @@
+
+public class Libros {
+	private int codigo;
+	private String titulo;
+	private String autor;
+	private int numeroPaginas;
+	
+	// Constructores
+	
+	Libros() {}
+	
+	Libros(int codigo, String titulo) {
+		this.codigo = codigo;
+		this.titulo = titulo;		
+	}
+	
+	Libros(int codigo, String titulo, String autor) {
+		this.codigo = codigo;
+		this.titulo = titulo;	
+		this.autor = autor;
+	}
+	
+	Libros(int codigo, String titulo, String autor, int numeroPaginas) {
+		this.codigo = codigo;
+		this.titulo = titulo;	
+		this.autor = autor;
+		this.numeroPaginas = numeroPaginas;
+	}
+	
+	// Setters
+	public void SetCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	
+	public void SetTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	
+	public void SetAutor(String autor) {
+		this.autor = autor;
+	}
+	
+	public void SetNumeroPaginas(int numeroPaginas) {
+		this.numeroPaginas = numeroPaginas
+	}
+	
+	// Getters
+	public int GetCodigo() {
+		return this.codigo;
+	}
+	
+	public String GetTitulo() {
+		return this.titulo;		
+	}
+	
+	public String GetAutor() {
+		return this.autor;
+	}
+	
+	public int GetNumeroPaginas() {
+		return this.numeroPaginas;
+	}
+	
+	@Override
+	public String toString(){
+		String cadena = "Codigo: " + this.codigo + "\nTitulo: " + this.titulo + "\nAutor: " + this.autor + "\nNumero de Páginas: " + this.numeroPaginas;
+		return cadena;
+	}
+	
+}
