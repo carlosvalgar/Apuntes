@@ -1,0 +1,18 @@
+
+public class Persona {
+	//Atributos: Caracteristicas de la persona (las variables)
+	private String nombre;
+	private int edad;
+	private String ciudad;
+	
+	//Métodos: Las cosas que puede hacer la clase persona (las funciones)
+	//Constructor/es Siempre tiene el nombre de la clase
+	
+	
+	//Setters/Getters
+	
+	void cantar() {
+		System.out.println("Laaaaaaa lala laaaaaa lala laaaaaaa lala laaaaaaa ~~ ");
+	}
+	
+}
