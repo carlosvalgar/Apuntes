@@ -132,3 +132,6 @@ BEGIN
 listadoTresMasPrestados;
 END;
 /
+
+
+-- SELECT DISTINCT reflibro, COUNT(*) OVER (PARTITION BY reflibro) AS prestamos FROM prestamos; (Puedo usar el partition by en el count)
