@@ -1,5 +1,3 @@
-package Pt_ArrayList_Exe2;
-
 public class Cercle extends Figura {
 	private double radi;
 	
@@ -25,7 +23,7 @@ public class Cercle extends Figura {
 		this.radi = radi;
 	}
 	
-	// Métodos
+	// Mï¿½todos
 	
 	@Override
 	public String toString() {

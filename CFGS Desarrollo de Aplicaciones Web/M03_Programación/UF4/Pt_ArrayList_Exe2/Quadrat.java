@@ -1,5 +1,3 @@
-package Pt_ArrayList_Exe2;
-
 public class Quadrat extends Figura {
 	private double costat;
 	
@@ -25,7 +23,7 @@ public class Quadrat extends Figura {
 		this.costat = costat;
 	}
 	
-	// Métodes
+	// Mï¿½todes
 	
 	@Override
 	public String toString() {

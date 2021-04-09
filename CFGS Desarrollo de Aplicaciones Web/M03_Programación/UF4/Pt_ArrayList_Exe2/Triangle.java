@@ -1,5 +1,3 @@
-package Pt_ArrayList_Exe2;
-
 public class Triangle extends Figura {
 	private double base, altura;
 	
@@ -35,7 +33,7 @@ public class Triangle extends Figura {
 	}
 	
 	
-	// Métodos
+	// Mï¿½todos
 	
 	@Override
 	public String toString() {

@@ -1,5 +1,3 @@
-package Pt_ArrayList_Exe2;
-
 public abstract class Figura {
 	private String color;
 	private double area;
@@ -30,7 +28,7 @@ public abstract class Figura {
 		this.area = area;
 	}
 
-	// Métodos
+	// MÃ©todos
 	
 	@Override
 	public String toString() {

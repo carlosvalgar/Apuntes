@@ -1,5 +1,3 @@
-package Pt_ArrayList_Exe2;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,7 +11,7 @@ public class FrmFigures {
 		Scanner scan = new Scanner(System.in);
 		
 		do {
-			System.out.println("1.- Afegir Triangle\n2.- Afegir Cercle\n3.- Afegir Quadrat\n4.- Contar Figures\n5.- Suma de àrees dels cercles\n6.- Sortir\n    > ");
+			System.out.println("1.- Afegir Triangle\n2.- Afegir Cercle\n3.- Afegir Quadrat\n4.- Contar Figures\n5.- Suma de ï¿½rees dels cercles\n6.- Sortir\n    > ");
 			opcion = scan.nextInt();
 			scan.nextLine();
 			switch(opcion) {
@@ -73,14 +71,14 @@ public class FrmFigures {
 					if (item instanceof Cercle) {
 						areaCercles += item.getArea();
 					}
-				System.out.println("\n==================================================\nLa suma del àrea de tots els cercles es de: " + String.format("%.2f", areaCercles) + ".\n==================================================\n");
+				System.out.println("\n==================================================\nLa suma del ï¿½rea de tots els cercles es de: " + String.format("%.2f", areaCercles) + ".\n==================================================\n");
 				break;
 				
 			case 6:
 				break;
 				
 			default:
-				System.out.println("ERROR: Opció invàlida.");
+				System.out.println("ERROR: Opciï¿½ invï¿½lida.");
 				break;			
 			}
 		} while(opcion != 6);
