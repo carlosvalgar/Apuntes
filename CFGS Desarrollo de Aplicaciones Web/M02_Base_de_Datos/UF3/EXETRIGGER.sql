@@ -41,7 +41,7 @@ IF v_contador >= 5 THEN
     RAISE_APPLICATION_ERROR(-20001, 'Un jefe no puede tener más de 5 empleados a su cargo.');
 END IF;
 END tr_jefe_cinco_empleados;
-
+/
 INSERT INTO EMPLEADOS VALUES('12345678F', 'Pepe6', '47952986X', 1, 1000, USER, SYSDATE);
 */
 
@@ -55,7 +55,7 @@ IF :new.salario > (:old.salario * 1.2) THEN
     RAISE_APPLICATION_ERROR(-20002, 'No se puede incrementar el salario más del 20%');
 END IF;
 END tr_subida_maxima_sueldo;
-
+/
 UPDATE EMPLEADOS SET SALARIO = 1500 WHERE DNI = '12345678E';
 */
 
@@ -69,7 +69,7 @@ BEGIN
 END tr_empleados_baja;
 
 DELETE FROM empleados WHERE DNI = '12345678E';
-
+/
 select * from empleados_baja;
 */
 
@@ -86,7 +86,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20002, 'El jefe y el empleado deben pertenecer al mismo departamento.');
     END IF;
 END tr_mismo_departamento;
-
+/
 INSERT INTO EMPLEADOS VALUES('12345678F', 'Pepe6', '47952986X', 2, 1000, USER, SYSDATE);
 INSERT INTO EMPLEADOS VALUES('12345678F', 'Pepe6', '47952986X', 1, 1000, USER, SYSDATE);
 */
@@ -105,11 +105,30 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20003, 'La suma de salarios de un departamento no puede superar los 10.000.');
     END IF;
 END tr_salario_departamento;
-
+/
 INSERT INTO EMPLEADOS VALUES('12345678G', 'Pepe7', '47952986X', 1, 10000, USER, SYSDATE);
 */
 
-
+-- 6.- 
+-- Visualizar los trigger definidos sobre una tabla consultando la vista ALL-_TRIGGERS.
+DESC ALL_TRIGGERS;
+SELECT trigger_name, status FROM ALL_TRIGGERS WHERE table_name = 'EMPLEADOS';
+-- Desactivar (DISABLE) y activar (ENABLE) los trigger definidos sobre una tabla:
+ALTER TABLE EMPLEADOS DISABLE ALL TRIGGERS;
+SELECT trigger_name, status FROM ALL_TRIGGERS WHERE table_name = 'EMPLEADOS';
+ALTER TABLE EMPLEADOS ENABLE ALL TRIGGERS;
+SELECT trigger_name, status FROM ALL_TRIGGERS WHERE table_name = 'EMPLEADOS';
+-- Activar y desactivar un trigger especifico:
+ALTER TRIGGER tr_salario_departamento DISABLE;
+SELECT trigger_name, status FROM ALL_TRIGGERS WHERE table_name = 'EMPLEADOS';
+ALTER TRIGGER tr_salario_departamento ENABLE;
+SELECT trigger_name, status FROM ALL_TRIGGERS WHERE table_name = 'EMPLEADOS';
+-- Ver la descripción de un trigger:
+SELECT description FROM USER_TRIGGERS WHERE trigger_name = 'TR_SALARIO_DEPARTAMENTO';
+-- Ver el cuerpo de un trigger:
+SET LONG 2000;
+SELECT trigger_body FROM USER_TRIGGERS WHERE trigger_name = 'TR_SALARIO_DEPARTAMENTO';
+SET LONG 80;
 
 
 
