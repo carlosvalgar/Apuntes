@@ -67,9 +67,9 @@ FOR EACH ROW
 BEGIN
     INSERT INTO empleados_baja VALUES(:old.dni, :old.nomemp, :old.jefe, :old.departamento, :old.salario, USER, SYSDATE);
 END tr_empleados_baja;
-
-DELETE FROM empleados WHERE DNI = '12345678E';
 /
+DELETE FROM empleados WHERE DNI = '12345678E';
+
 select * from empleados_baja;
 */
 
