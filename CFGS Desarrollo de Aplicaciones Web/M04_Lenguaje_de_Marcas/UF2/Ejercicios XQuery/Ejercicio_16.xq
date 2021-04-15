@@ -1,4 +1,4 @@
-(:3.- Mostrar sólo los autores de los libros cuyo precio sea menor o igual a 30.:)
+(:-16. Mostrar los libros escritos en años que terminen en "20".:)
 for $book in doc("C:\Users\Carlos\Desktop\Apuntes\CFGS Desarrollo de Aplicaciones Web\M04_Lenguaje_de_Marcas\UF2\Ejercicios XQuery 1.xml")/bookstore/book
-where number($book/price) <= 30
-return $book/author
+where substring($book/year, string-length($book/year) -1) = "20"
+return $book
