@@ -1,5 +1,3 @@
-package Ejemplo_Interfaz;
-
 import java.util.Comparator;
 
 public class ComparatorPersona implements Comparator<Persona> {

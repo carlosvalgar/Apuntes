@@ -1,5 +1,3 @@
-package Ejemplo_Interfaz;
-
 public class Persona implements Comparable<Persona>{
     String nombre, direccion;
     int edad;
@@ -61,6 +59,7 @@ public class Persona implements Comparable<Persona>{
         else if (this.edad > o.getEdad()) {
             return 1;
         }
+        // return this.getEdad() - o.getEdad(); Este sirve solo para enteros
         return 0;
     }
 }
