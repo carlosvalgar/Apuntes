@@ -1,5 +1,5 @@
 (:7.- Mostrar los libros ordenados primero por "author" y luego por "category" en una sola consulta.:)
-for $book in doc("C:\Users\Carlos\Desktop\Apuntes\CFGS Desarrollo de Aplicaciones Web\M04_Lenguaje_de_Marcas\UF2\Ejercicios XQuery 1.xml")/bookstore/book
+for $book in doc("C:\Users\Jutox\Apuntes\CFGS Desarrollo de Aplicaciones Web\M04_Lenguaje_de_Marcas\UF2\Ejercicios XQuery 1.xml")/bookstore/book
 order by $book/author[1], $book/@category
 return $book
 

@@ -1,9 +1,7 @@
 (:10.- Mostrar el precio mínimo y máximo de los libros.:)
 
-for $book in doc("C:\Users\Carlos\Desktop\Apuntes\CFGS Desarrollo de Aplicaciones Web\M04_Lenguaje_de_Marcas\UF2\Ejercicios XQuery 1.xml")/bookstore 
-let $items := $book/book/price
-let $min := min($items)
-let $max := max($items)
+let $items := doc("C:\Users\Jutox\Apuntes\CFGS Desarrollo de Aplicaciones Web\M04_Lenguaje_de_Marcas\UF2\Ejercicios XQuery 1.xml")/bookstore/book/price
+let $min := min($items), $max := max($items)
 return 
 <precios>
   <precio_minimo>{$min}</precio_minimo>

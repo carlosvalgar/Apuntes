@@ -1,0 +1,13 @@
+Libros2.xml Prestamos.xml
+
+Obtener los títulos de los libros prestados con sus autores y la fecha de inicio y devolución del préstamo, ordenados por la fecha de inicio del prestamos. Todo esto mostrarlo en un listado HTML.
+Ejemplo:
+1 - Libro1
+	1.1 Autor/es: autor1 ... autorn
+	1.2 Fecha inicio prestamo: AAAA-MM-DD .
+	1.3 Fecha fin prestamo: AAAA-MM-DD .
+
+
+Devolver los títulos de los libros almacenados  y su primer autor. En caso de que haya más de un autor para un libro se añade un segundo autor "cia".
+
+Devolver  todos los autores que ha léido Pepito Grillo.
