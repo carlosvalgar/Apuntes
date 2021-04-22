@@ -51,32 +51,28 @@ CREATE OR REPLACE PROCEDURE consulta_clients_cp(codigo_postal CUSTOMER.CUSTOMER_
 END consulta_clients_cp;
 /
 */
-/*
+
 -- Baixa client: donar de baixa el client que l’usuari desitgi, tenint en compte si existeix o no. En cas d’existir s’ha d’anar en compte si està relacionat en una altra taula, i per tant, s’ha de donar el missatge corresponent de què no es pot esborrar.
 CREATE OR REPLACE PROCEDURE baixa_clients(codigo_cliente CUSTOMER.CUSTOMER_CODE%TYPE) AS 
     v_cliente_existe NUMBER;
     exc_inexistente EXCEPTION;
-    v_existe_en_otra_tabla NUMBER;
-    exc_existe_otra_tabla EXCEPTION;
+    exc_foreign_key EXCEPTION;
+    PRAGMA EXCEPTION_INIT(exc_foreign_key, -2292);
     BEGIN
         SELECT COUNT(*) INTO v_cliente_existe FROM CUSTOMER WHERE CUSTOMER_CODE = codigo_cliente;
         IF v_cliente_existe = 0 THEN
             RAISE exc_inexistente;
-        END IF;
-        SELECT COUNT(*) INTO v_existe_en_otra_tabla FROM ORDER2 WHERE CUSTOMER_CODE = codigo_cliente;
-        IF v_existe_en_otra_tabla >= 1 THEN
-            RAISE exc_existe_otra_tabla;
         END IF;
         DELETE FROM CUSTOMER WHERE CUSTOMER_CODE = codigo_cliente;
         DBMS_OUTPUT.PUT_LINE('Cliente con codigo '||codigo_cliente||' borrado con exito.');
         EXCEPTION
             WHEN exc_inexistente THEN
                 DBMS_OUTPUT.PUT_LINE('El cliente que intentas eliminar (codigo: '||codigo_cliente||') no existe.');
-            WHEN exc_existe_otra_tabla THEN
+            WHEN exc_foreign_key THEN
                 DBMS_OUTPUT.PUT_LINE('El cliente que intentas eliminar (codigo: '||codigo_cliente||') existe en otra tabla y por lo tanto no se puede eliminar.');
-            WHEN OTHERS THEN
-                DBMS_OUTPUT.PUT_LINE('Error inesperado.');
     END baixa_clients;
 /
-*/
 
+begin
+baixa_clients(10);
+end;
