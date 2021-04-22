@@ -51,7 +51,7 @@ CREATE OR REPLACE PROCEDURE consulta_clients_cp(codigo_postal CUSTOMER.CUSTOMER_
 END consulta_clients_cp;
 /
 */
-
+/*
 -- Baixa client: donar de baixa el client que l’usuari desitgi, tenint en compte si existeix o no. En cas d’existir s’ha d’anar en compte si està relacionat en una altra taula, i per tant, s’ha de donar el missatge corresponent de què no es pot esborrar.
 CREATE OR REPLACE PROCEDURE baixa_clients(codigo_cliente CUSTOMER.CUSTOMER_CODE%TYPE) AS 
     v_cliente_existe NUMBER;
@@ -70,9 +70,8 @@ CREATE OR REPLACE PROCEDURE baixa_clients(codigo_cliente CUSTOMER.CUSTOMER_CODE%
                 DBMS_OUTPUT.PUT_LINE('El cliente que intentas eliminar (codigo: '||codigo_cliente||') no existe.');
             WHEN exc_foreign_key THEN
                 DBMS_OUTPUT.PUT_LINE('El cliente que intentas eliminar (codigo: '||codigo_cliente||') existe en otra tabla y por lo tanto no se puede eliminar.');
+            WHEN OTHERS THEN
+                DBMS_OUTPUT.PUT_LINE('Error inesperado');
     END baixa_clients;
 /
-
-begin
-baixa_clients(10);
-end;
+*/
