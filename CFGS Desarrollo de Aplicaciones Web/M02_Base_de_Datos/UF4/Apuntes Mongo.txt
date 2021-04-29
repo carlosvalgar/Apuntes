@@ -1,0 +1,27 @@
+db.movieDetails.find({countries:{$all:["Spain", "Colombia"]}}) (Te coje todos los objetos que tienen Spain y Colombia en el array de valores)
+db.movieDetails.find({countries:{$in:["Spain", "Colombia"]}}) (Te coje todos los objetos que tienen Spain o Colombia en el array de valores)
+db.movieDetails.find({"countries.0":"Spain"}) (Te coje todos los objetos que tienen Spain en la posicion 0 del array)
+
+Insertar en mongo:
+db.Students.insert({
+  0: "Carlos",
+  1: "Valenzuela",
+  2: "Garcia",
+  3: "47952986X",
+  4: "H",
+  5: "darksunreaper@gmail.com",
+  6: "934744942",
+  7: "662208109",
+  8: 1992
+  })
+
+update en mongo (campo que identifique el objeto a cambiar, valor que queremos modificar y el valor):
+db.Students.update({3:"47952986X"},{$set:{0:"Guillermo"}})
+
+Cambiar varios a la vez:
+db.Students.update({0:"Sandra"}, {$set:{4:"M"}}, {multi:true})
+
+
+Para borrar en mongo (justone para eliminar la primera coincidencia):
+db.Students.remove({3:"47952986X"})
+db.Students.remove({_id: ObjectId("608671255068cf24e4395f82")}) (También se puede usar con el object id)
