@@ -1,0 +1,55 @@
+1.-
+db.movieDetails.insert({
+  "title": "Fight Club",
+  "writers": ["Chuck Palahniuk"],
+  "year": 2009,
+  "actors": ["Brad Pitt", "Edward Norton"]
+})
+
+2.-
+db.movieDetails.insert({
+  "title": "Pulp Fiction",
+  "writers": ["Quentin Tarantino"],
+  "year": 1994,
+  "actors": ["John Travolta", "Uma Thurman"]
+})
+
+3.-
+db.movieDetails.insert({
+  "title": "Inglorious Basterds",
+  "writers": ["Quentin Tarantino"],
+  "year": 2009,
+  "actors": ["Brad Pitt", "Diane Kruger", "Eli Roth"]
+})
+
+Generamos un json con los archivos que queremos (Tiene que tener una estructura de array)
+
+Por comandos:
+mongoimport.exe --jsonArray --db video --collection movieDetails --file C:\Users\Jutox\OneDrive\Escritorio\peliculas_pt1.json
+
+
+consultas
+1.- db.movieDetails.find()
+2.- db.movieDetails.find({"writers":"Quentin Tarantino"})
+3.- db.movieDetails.find({"actors":"Brad Pitt"})
+4.- db.movieDetails.find({$and:[{"genres":"Action"},{"genres":"Western"}]})
+5.- db.movieDetails.find({year:{$gte:1990, $lt:2000}})
+6.- db.movieDetails.find({$or : [{year:{$lt:2000}}, {year:{$gt:2010}}]})
+
+
+exe3.-
+1.- db.movieDetails.update({"title":"The Hobbit: An Unexpected Journey"}, {$set:{"synopsis":"A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."}})
+2.- db.movieDetails.update({"title":"The Hobbit: The Desolation of Smaug"}, {$set:{"synopsis":"The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."}})
+3.- db.movieDetails.update({"title":"Pulp Fiction"}, {$push:{actors: "Samuel L."}})
+
+exe 4.-
+1.- db.movieDetails.find({synopsis:{$regex:/Bilbo/}})
+2.- db.movieDetails.find({synopsis:{$regex:/Gandalf/}})
+3.- db.movieDetails.find({$and:[{synopsis:{$regex:/Bilbo/}}, {synopsis:{$not:{$regex:/Gandalf/}}}]})
+4.- db.movieDetails.find({synopsis:{$regex:/(dwarves|hobbit)/}})
+5.- db.movieDetails.find({$and:[{title:{$regex:/gold/i}},{title:{$regex:/dragons/i}}]})
+
+exe 5.-
+1.- db.movieDetails.remove({title:"Star Trec"})
+2.- db.movieDetails.remove({title:"Love Actually"})
+3.- db.movieDetails.updateMany({},{$unset:{type:""}})
