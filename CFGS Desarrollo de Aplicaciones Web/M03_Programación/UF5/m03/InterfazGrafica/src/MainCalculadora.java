@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainCalculadora {
     public static void main(String[] args) {
@@ -11,8 +13,11 @@ class PanelSuperior extends JPanel {
     JTextArea jTextArea;
     public PanelSuperior() {
         jTextArea = new JTextArea();
+        jTextArea.setEditable(false);
         add(jTextArea);
     }
+
+
 }
 
 class PanelInferior extends JPanel {
@@ -30,17 +35,23 @@ class PanelInferior extends JPanel {
         }
         botones[9] = new JButton("+");
         botones[10] = new JButton("" + 0);
-        botones[11] = new JButton("-");
+        botones[11] = new JButton("=");
+
     }
 }
 
-class VentanaCalculadora extends JFrame {
+class VentanaCalculadora extends JFrame implements ActionListener {
     PanelInferior pi;
     PanelSuperior ps;
+    Boolean reset = false;
 
     public VentanaCalculadora() {
         pi = new PanelInferior();
         ps = new PanelSuperior();
+        ps.jTextArea.setText("");
+        for (int i = 0; i < pi.botones.length; i++) {
+            pi.botones[i].addActionListener(this);
+        }
         this.setTitle("MyCalc"); // super("Mi primera ventanita uwu"); Dan el mismo resultado
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Para cuando cierre la ventana, exit_on_close nos servira para que se acabe el proceso en el pc
         this.setResizable(false); // Hacemos que podamos modificar el tamaño de la pantalla
@@ -50,5 +61,23 @@ class VentanaCalculadora extends JFrame {
         add(pi, BorderLayout.CENTER);
 
         this.setVisible(true); // Hacemos que sea visible o no
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton boton = (JButton) e.getSource();
+        if (!boton.getText().equalsIgnoreCase("=")) {
+            ps.jTextArea.setText(ps.jTextArea.getText() + boton.getText());
+        }
+
+        else {
+            String [] numeros = ps.jTextArea.getText().split("\\+");
+            int total = 0;
+            for (int i = 0; i < numeros.length; i++){
+                total += Integer.valueOf(numeros[i]);
+            }
+            ps.jTextArea.setText(String.valueOf(total));
+
+        }
     }
 }
