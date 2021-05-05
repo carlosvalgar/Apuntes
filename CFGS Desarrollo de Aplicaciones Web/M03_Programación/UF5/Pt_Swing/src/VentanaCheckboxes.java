@@ -84,7 +84,4 @@ public class VentanaCheckboxes extends JFrame {
         setResizable(false);
         setVisible(true);
     }
-
-
-
 }
