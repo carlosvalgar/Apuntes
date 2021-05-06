@@ -6,6 +6,7 @@ public class ComponentsText extends JPanel{
     private JTextField jtf;
     private JPasswordField jpf;
     private JTextArea jta;
+    private JScrollPane jsp;
 
     public ComponentsText() {
         iniciarComponentes();
@@ -24,17 +25,20 @@ public class ComponentsText extends JPanel{
                     case 0:
                         c.gridx = 1;
                         c.gridy = i;
+                        c.anchor = GridBagConstraints.WEST;
                         add(jtf, c);
                         break;
                     case 1:
                         c.gridx = 1;
                         c.gridy = i;
+                        c.anchor = GridBagConstraints.WEST;
                         add(jpf, c);
                         break;
                     case 2:
                         c.gridx = 1;
                         c.gridy = i;
-                        add(jta, c);
+                        c.anchor = GridBagConstraints.WEST;
+                        add(jsp, c);
                         break;
                     case 3:
                         c.gridx = 1;
@@ -61,9 +65,52 @@ public class ComponentsText extends JPanel{
         jtf = new JTextField("Text", 15);
         jpf = new JPasswordField("Text", 15);
         jta = new JTextArea("Text", 3, 15);
+        jta.setLineWrap(true);
+        jsp = new JScrollPane(jta, JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
         jtf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         jpf.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        jta.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        jsp.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
+    }
+
+    public JLabel[] getJl() {
+        return jl;
+    }
+
+    public void setJl(JLabel[] jl) {
+        this.jl = jl;
+    }
+
+    public JTextField getJtf() {
+        return jtf;
+    }
+
+    public void setJtf(JTextField jtf) {
+        this.jtf = jtf;
+    }
+
+    public JPasswordField getJpf() {
+        return jpf;
+    }
+
+    public void setJpf(JPasswordField jpf) {
+        this.jpf = jpf;
+    }
+
+    public JTextArea getJta() {
+        return jta;
+    }
+
+    public void setJta(JTextArea jta) {
+        this.jta = jta;
+    }
+
+    public JScrollPane getJsp() {
+        return jsp;
+    }
+
+    public void setJsp(JScrollPane jsp) {
+        this.jsp = jsp;
     }
 }

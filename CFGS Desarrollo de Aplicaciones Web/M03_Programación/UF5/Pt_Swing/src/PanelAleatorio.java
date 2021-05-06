@@ -6,15 +6,19 @@ public class PanelAleatorio extends JPanel {
     private JLabel jl[] = new JLabel[6];
     private JTextArea jta[] = new JTextArea[6];
     private JButton button[] = new JButton[3];
+    private JScrollPane jsp;
 
     public PanelAleatorio() {
         iniciarComponentes();
 
         for (int i = 0; i < jta.length; i++) {
             add(jl[i]);
-            add(jta[i]);
             if (i != 2) {
+                add(jta[i]);
                 jta[i].setEditable(false);
+            }
+            else {
+                add(jsp);
             }
         }
         for (int i = 0; i < button.length; i++) {
@@ -32,7 +36,8 @@ public class PanelAleatorio extends JPanel {
         for (int i = 0; i < 6; i++) {
             jta[i] = new JTextArea(1, 7);
         }
-
+        jsp = new JScrollPane(jta[2], JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        jsp.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         button[0] = new JButton("Activar");
         button[1] = new JButton("Comprobar");
         button[2] = new JButton("Salir");
@@ -60,5 +65,11 @@ public class PanelAleatorio extends JPanel {
 
     public void setButton(JButton[] button) {
         this.button = button;
+    }
+
+    public JScrollPane getJsp() {
+        return jsp;
+    } public void setJsp(JScrollPane jsp) {
+        this.jsp = jsp;
     }
 }

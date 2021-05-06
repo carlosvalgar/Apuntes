@@ -39,6 +39,7 @@ public class VentanaAleatorio extends JFrame {
                     if ((Integer.valueOf(pa.getJta()[0].getText()) + Integer.valueOf(pa.getJta()[1].getText())) == Integer.valueOf(pa.getJta()[2].getText())) {
                         intentos += 1;
                         aciertos += 1;
+                        pa.getJta()[2].setBackground(Color.green);
                         pa.getJta()[3].setText(String.valueOf(intentos));
                         pa.getJta()[4].setText(String.valueOf(aciertos));
                         num1 = (int) (Math.random() * 100);
@@ -49,6 +50,7 @@ public class VentanaAleatorio extends JFrame {
                         intentos += 1;
                         pa.getJta()[3].setText(String.valueOf(intentos));
                         pa.getJta()[5].setText(String.valueOf(intentos - aciertos));
+                        pa.getJta()[2].setBackground(Color.pink);
                         num1 = (int) (Math.random() * 100);
                         num2 = (int) (Math.random() * 100);
                         pa.getJta()[0].setText(String.valueOf(num1));
@@ -57,6 +59,7 @@ public class VentanaAleatorio extends JFrame {
 
                 } catch (NumberFormatException exception) {
                     pa.getJta()[2].setText("Pon un entero");
+                    pa.getJta()[2].setBackground(Color.red);
                 }
             }
         });
