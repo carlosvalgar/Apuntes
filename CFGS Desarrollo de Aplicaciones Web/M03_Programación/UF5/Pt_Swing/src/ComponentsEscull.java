@@ -19,6 +19,7 @@ public class ComponentsEscull extends JPanel {
 
         c.gridy = 1;
         add(jPanel1, c);
+
     }
 
     public void iniciarComponentes() {
