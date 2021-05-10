@@ -1,20 +1,35 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ies nombre="IES Abastos" web="http://www.iesabastos.org/" >
-  <ciclos>
-    <ciclo id="ASIR">
-      <nombre>Administración de Sistemas Informáticos en Red</nombre>
-      <grado>Superior</grado>
-      <decretoTitulo año="2009" />
-    </ciclo>
-    <ciclo id="DAW">
-      <nombre>Desarrollo de Aplicaciones Web</nombre>
-      <grado>Superior</grado>
-      <decretoTitulo año="2010" />
-    </ciclo>
-    <ciclo id="SMR">
-      <nombre>Sistemas Microinformáticos y Redes</nombre>
-      <grado>Medio</grado>
-      <decretoTitulo año="2008" />
-    </ciclo>
-  </ciclos>
-</ies>
+<musica>
+  <musico id="Vivaldi" pais="Italia">
+    Antonio Vivaldi
+    <nacido>1678</nacido>
+    <fallecido>1741</fallecido>
+  </musico>
+  <musico id="Bach" pais="Alemania">
+    Johann Sebastian Bach
+    <nacido>1685</nacido>
+    <fallecido>1750</fallecido>
+  </musico>
+  <musico id="Mozart" pais="Austria">
+    Wolfgang Amadeus Mozart
+    <nacido>1756</nacido>
+    <fallecido>1791</fallecido>
+  </musico>
+  <musico id="Beethoven" pais="Alemania">
+    Ludwig van Beethoven
+    <nacido>1770</nacido>
+    <fallecido>1827</fallecido>
+  </musico>
+  <musico id="Verdi" pais="Italia">
+    Giuseppe Verdi
+    <nacido>1813</nacido>
+    <fallecido>1901</fallecido>
+  </musico>
+  <obra autor="Vivaldi" genero="concierto">Las cuatro estaciones</obra>
+  <obra autor="Bach" genero="oratorio">Pasión según San Mateo</obra>
+  <obra autor="Mozart" genero="ópera">La flauta mágica</obra>
+  <obra autor="Mozart" genero="concierto">Concierto para piano nº 27</obra>
+  <obra autor="Beethoven" genero="sinfonía">Novena sinfonía</obra>
+  <obra autor="Verdi" genero="ópera">La Traviata</obra>
+  <obra autor="Beethoven" genero="concierto">Concierto para piano nº 5</obra>
+</musica>
